@@ -1,0 +1,94 @@
+@import url(./font.css);
+#searchEl{ 
+    color:#E16A00 !important;
+    text-decoration: underline !important;
+    font-weight: 700 !important;
+}
+main #title{
+    margin-top: 134px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 44px;
+    color: #241400;
+}
+main{
+    margin-bottom: 124px;
+    margin-left: 215px;
+}
+
+#content{
+    display: flex;
+
+}
+#search{
+    display: flex;
+    width: 433px;
+    flex-direction: column;
+}
+input{
+    height: 70px;
+    padding: 27px;
+    font-family: 'Crimson Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    border: 1px solid #CECECE;
+    margin-bottom: 44px;
+    border-radius: 5px;
+}
+#searchBtn{
+    height: 65px;
+    color: #FFFFFF;
+    font-family: 'Crimson Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    border: none;
+    line-height: 39px;
+    text-align: center;
+    background-color: #E16A00;
+    border-radius: 5px;
+}
+.card{
+    margin-left: 94px;
+    margin-right: 59px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+}
+.card img{
+    border-radius: 0px;
+    width: 220px;
+    margin-top: 64px;
+    margin-left: 31px;
+    margin-bottom: 134px;
+}
+
+#book-info{
+    margin-left: 37px;
+    margin-right: 56px;
+}
+
+#book-name{
+    margin-top: 47px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+}
+#author{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 196.19%;
+    font-size: 18px;
+}
+#book-content{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 196.19%;
+}

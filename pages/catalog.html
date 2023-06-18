@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/catalog.css">
+    <link rel="stylesheet" href="../css/variable.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div id="logo">
+            <img src="../assets/images/logo.svg" alt="">
+        </div>
+        <div id="navList">
+            <a id="homeEl" href="./index.html">Home</a>
+            <a id="catalogEl" href="./catalog.html">Catalog</a>
+            <a id="aboutEl" href="./about.html">About store</a>
+            <a id="contactEl" href="./contact.html">Contact Us</a>
+            <a id="searchEl" href="./search.html">Search</a>
+        </div>
+        <div id="join">
+            <img src="../assets/images/profile.svg" alt="">
+            <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Join Us</a>
+        </div>
+         <!-- Modal -->
+         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Join Us</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" placeholder="Full name">
+                    <input type="text" placeholder="Email"><br>
+                    <button id="joinBtn" style="background-color: #E16A00; text-align: center;width: 70%; height: 70px;" type="button" class="btn">Join</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </header>
+    <main>
+
+    </main>
+    <!-- FOOTER -->
+    <footer>
+        <div id="social-media">
+            <p>Follow us on social media</p>
+            <div id="media-icon">
+                <img id="facebook" class="icon" src="../assets/icons/facebook.svg">
+                <img id="twitter" class="icon" src="../assets/icons/twitter.svg">
+                <img id="instagram" class="icon" src="../assets/icons/instagram.svg">
+            </div>
+        </div>
+        <div id="brown-area">
+            <div id="row1">
+                <img src="../assets/icons/footer-logo.svg">
+                <div id="lists">
+                    <ul class="list" id="list1">
+                      <li class="liHead">Popular</li>
+                      <li>Programming</li>
+                      <li>Books for children</li>
+                      <li>Psychology</li>
+                      <li>Business</li>  
+                    </ul>
+                    <ul class="list" id="list2">
+                        <li class="liHead">Information</li>
+                        <li>Delivery</li>
+                        <li>Payment</li>
+                        <li>About the store <br><br></li>
+                    </ul>
+                    <ul class="list" id="list3">
+                        <li class="liHead">Help</li>
+                        <li>Contacts</li>
+                        <li>Purchase returns</li>
+                        <li>Buyer help <br><br> </li>
+                    </ul>
+                </div>
+                <div id="call">
+                    <p id="phone-number">+38 (071) 339-16-26</p>
+                    <button id="call-btn">Request a call</button>
+                </div>
+            </div>
+            <div id="row2">
+                <p>All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
