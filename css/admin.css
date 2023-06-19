@@ -16,7 +16,7 @@ nav{
     height: 100%;
 }
 
-nav>div{
+nav>div{ 
     position: sticky;
     top: 85px;
 }
