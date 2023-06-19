@@ -16,6 +16,11 @@ nav{
     height: 100%;
 }
 
+nav>div{
+    position: sticky;
+    top: 85px;
+}
+
 nav #logo{
     display: flex;
     align-items: center;
