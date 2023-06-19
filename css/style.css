@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&family=Roboto:ital,wght@0,100;0,400;0,700;1,500&display=swap');
+
+
+:root {
+    --mainColorHome: #391F00;
+    --mainColorPink: #720418;
+    --mainColorOrange: #FF8B00;
+    --mainColorPurple: #9b51e0;
+    --mainColorText: #241400;
+    --mainBorderColor: #e6e7e9c2;
+    --fontRoboto: 'Montserrat', sans-serif;
+    ;
+    --fontMons: 'Roboto', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fontMons);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+}
+
+.bg-pink-dark {
+    background-color: var(--mainColorPink) !important;
+}
+
+.bg-pink-dark-hover::hover {
+    background-color: #72041896 !important;
+
+}
+.color_white {
+    color: whitesmoke;
+}
+.color_black {
+    color: black;
+}
+
+.bg-orange {
+    background-color: var(--mainColorOrange) !important;
+}
+
+.text-orange{
+    color: var(--mainColorOrange) !important;
+}
+
+.bg-orange:hover {
+    background-color: #dd7a00 !important;
+}
+
+.bg-purple {
+    background-color: var(--mainColorPurple) !important;
+}
+
+.bg-main-light {
+    background-color: var(--mainBorderColor) !important;
+}
+
+.bg-home-dark {
+    background-color: var(--mainColorHome) !important;
+}
+
+.text-main {
+    color: var(--mainColorText) !important;
+}
+
+
+
+.nav-active{
+    color: var(--mainColorOrange)!important;
+    font-weight:bold;
+    text-decoration: underline;
+}
+
+
+
+
+footer{
+    margin-top: auto;
+}
+
+#header {
+    position: fixed;
+  }
+  
+  #content {
+    margin-top: 100px;
+  }
+  
+  #page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  #content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+  }
+  
+  #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;            /* Footer height */
+  }
+  .social {
+    margin-bottom: 104px;
+  }
