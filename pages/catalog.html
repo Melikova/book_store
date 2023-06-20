@@ -3,48 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Page</title>
+    <title>Catalog Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/catalog.css">
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
-        <div id="logo">
-            <img src="../assets/images/logo.svg" alt="">
-        </div>
-        <div id="navList">
-            <a id="homeEl" href="../index.html">Home</a>
-            <a id="catalogEl" href="../pages/catalog.html">Catalog</a>
-            <a id="aboutEl" href="../pages/about.html">About store</a>
-            <a id="contactEl" href="../pages/contact.html">Contact Us</a>
-            <a id="searchEl" href="../pages/search.html">Search</a>
-        </div>
-        <div id="join">
-            <img src="../assets/images/profile.svg" alt="">
-            <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Join Us</a>
-        </div>
-         <!-- Modal -->
-         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Join Us</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <input type="text" placeholder="Full name">
-                    <input type="text" placeholder="Email"><br>
-                    <button id="joinBtn" style="background-color: #E16A00; text-align: center;width: 70%; height: 70px;" type="button" class="btn">Join</button>
-                </div>
+    <div class="header container p-0" style="margin-bottom: 140px;">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../assets/images/logo.svg" alt="">
+                </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../pages/catalog.html">Catalog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../pages/about.html">About store</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../pages/contact.html">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../pages/search.html">Search</a>
+                  </li>
+                </ul>
+                <span class="navbar-text">
+                    <div id="join">
+                        <img src="../assets/images/profile.svg" alt="">
+                        <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Join Us</a>
+                    </div>
+                </span>
               </div>
             </div>
-          </div>
-    </header>
-    <main>
-
+        </nav>
+    </div>
+    <main style="margin-bottom: 148px;">
+        <div class="container" style="margin-bottom:122px;">
+            <div class="row">
+                <div class="col">
+                    <div class="btn d-flex align-items-center" style="width:100px; height: 29px; background: #E16A00 !important; color: #fff; line-height: 29px; font-size: 12px; text-align:left; padding:0 12px !important; font-weight: 900;"><img height="13px" style="margin-right:4px;" src="../assets/icons/angle-left-solid.svg" alt="">BACK</div>
+                </div>
+            </div>
+            <div class="row" style="color: #241400;">
+                <div class="order-md-last col-12 col-md-5 d-flex justify-content-center"><img width="379px" src="../assets/images/book_1.png" alt=""></div>
+                <div class="col-12 col-md-7" style="padding-top: 80px;">
+                    <div>
+                        <p class="btn p-0" style="cursor: default; width:69px; height: 23px; background: #2F80ED; font-size: 12px; font-weight: 900; color: #fff;">2017</p>
+                        <div style="font-weight: 700; font-size: 35px;">Order in Chaos</div>
+                        <p style="font-weight: 700; font-size: 16px;">2 days ago added</p>
+                        <p style="font-size: 22px;">Konstantin Koptelov</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur esse tenetur consequatur ducimus quos iure eius accusantium doloremque deleniti! Illo vel perspiciatis, error magnam voluptate molestias laborum necessitatibus quos obcaecati animi aliquam maiores blanditiis excepturi dignissimos accusamus dolorem. Blanditiis aut animi temporibus nisi assumenda perferendis, optio in enim culpa eaque. Voluptates obcaecati facilis iusto cum ab numquam deleniti vero vitae asperiores reprehenderit unde eius, vel in excepturi officia, voluptate aspernatur id ratione voluptatum. Minus, quod.</p>
+                        <div><a class="text-decoration-none text-dark" href="#">More details</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-7">
+                    comment
+                </div>
+            </div>
+        </div>
     </main>
     <!-- FOOTER -->
     <footer>
@@ -90,6 +120,23 @@
             </div>
         </div>
     </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Join Us</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" placeholder="Full name">
+                <input type="text" placeholder="Email"><br>
+                <button id="joinBtn" style="background-color: #E16A00; text-align: center;width: 70%; height: 70px;" type="button" class="btn">Join</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- End of Modal -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
