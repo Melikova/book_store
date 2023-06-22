@@ -46,7 +46,12 @@
             </div>
         </nav>
     </div>
-    <main style="margin-bottom: 148px;">
+    <main style="margin-bottom: 148px; position: relative; min-height: 400px">
+      <div class="w-100 h-100 position-absolute d-flex justify-content-center align-items-center">
+        <div class="spinner-border text-warning" style="width:70px; height:70px" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
       <div class="container">
         <div class="row">
           <div id="about_title_content" class="col" style="font-size:36px; font-weight:900; color:#241400"></div>
@@ -146,10 +151,10 @@
         const db = getDatabase();
         return onValue(ref(db, '/about'), (snapshot) => {
           const data = snapshot.val() || false;
+          $('.spinner-border').hide();
           $("#about_title_content").html(data.about_title);
           $("#about_content_desc").html(data.description);
           $("#about_content_img").attr("src", data.image_url);
-          console.log(data);
         }, {
           onlyOnce: true
         });
