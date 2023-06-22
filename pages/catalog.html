@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="header container p-0" style="margin-bottom: 140px;">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <img src="../assets/images/logo.svg" alt="">
@@ -20,7 +20,7 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-4 mb-lg-0 w-100 justify-content-center">
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
                   </li>
@@ -37,7 +37,7 @@
                     <a class="nav-link" href="../pages/search.html">Search</a>
                   </li>
                 </ul>
-                <span class="navbar-text">
+                <span class="navbar-text" style="text-wrap:nowrap;">
                     <div id="join">
                         <img src="../assets/images/profile.svg" alt="">
                         <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Join Us</a>
@@ -48,14 +48,14 @@
         </nav>
     </div>
     <main style="margin-bottom: 148px;">
-        <div class="container" style="margin-bottom:122px;">
+        <div class="container book_details" style="margin-bottom:122px;">
             <div class="row">
                 <div class="col">
                     <div class="btn d-flex align-items-center" style="width:100px; height: 29px; background: #E16A00 !important; color: #fff; line-height: 29px; font-size: 12px; text-align:left; padding:0 12px !important; font-weight: 900;"><img height="13px" style="margin-right:4px;" src="../assets/icons/angle-left-solid.svg" alt="">BACK</div>
                 </div>
             </div>
             <div class="row" style="color: #241400;">
-                <div class="order-md-last col-12 col-md-5 d-flex justify-content-center"><img width="379px" src="../assets/images/book_1.png" alt=""></div>
+                <div class="order-md-last col-12 col-md-5 d-flex justify-content-center"><img width="379px" src="../assets/images/catalog_image.png" alt=""></div>
                 <div class="col-12 col-md-7" style="padding-top: 80px;">
                     <div>
                         <p class="btn p-0" style="cursor: default; width:69px; height: 23px; background: #2F80ED; font-size: 12px; font-weight: 900; color: #fff;">2017</p>
@@ -63,60 +63,82 @@
                         <p style="font-weight: 700; font-size: 16px;">2 days ago added</p>
                         <p style="font-size: 22px;">Konstantin Koptelov</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur esse tenetur consequatur ducimus quos iure eius accusantium doloremque deleniti! Illo vel perspiciatis, error magnam voluptate molestias laborum necessitatibus quos obcaecati animi aliquam maiores blanditiis excepturi dignissimos accusamus dolorem. Blanditiis aut animi temporibus nisi assumenda perferendis, optio in enim culpa eaque. Voluptates obcaecati facilis iusto cum ab numquam deleniti vero vitae asperiores reprehenderit unde eius, vel in excepturi officia, voluptate aspernatur id ratione voluptatum. Minus, quod.</p>
-                        <div><a class="text-decoration-none text-dark" href="#">More details</a></div>
+                        <div><a class="text-dark" href="#">More details</a></div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-7">
-                    comment
+                <div class="col-12 col-lg-7">
+                    <div class="input-group mb-5">
+                        <input type="text" class="form-control p-3" placeholder="Your anonim comment" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <button style="background-color: #E16A00;" class="btn" type="button" id="basic-addon2"><img width="28px" src="../assets/icons/send.png" alt=""></button>
+                    </div>          
+                    <div class="bg-white p-3 border rounded my-4">
+                        <div class="mb-3"><span class="me-2 fw-bolder">anonim</span><span>18:32 today</span></div>
+                        <div>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!</div>
+                    </div> 
+                    <div class="bg-white p-3 border rounded">
+                        <div class="mb-3"><span class="me-2 fw-bolder">anonim</span><span>18:32 today</span></div>
+                        <div>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!</div>
+                    </div>            
                 </div>
             </div>
         </div>
     </main>
-    <!-- FOOTER -->
-    <footer>
-        <div id="social-media">
-            <p>Follow us on social media</p>
-            <div id="media-icon">
-                <img id="facebook" class="icon" src="../assets/icons/facebook.svg">
-                <img id="twitter" class="icon" src="../assets/icons/twitter.svg">
-                <img id="instagram" class="icon" src="../assets/icons/instagram.svg">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <p class="h2 text-center mb-5" style="color:#391f02 !important">Follow us on social media</p>
+                <div id="media-icon">
+                    <a class="mx-4" href="#"><img id="facebook" class="icon" src="../assets/icons/facebook.svg"></a>
+                    <a class="mx-4" href="#"><img id="twitter" class="icon" src="../assets/icons/twitter.svg"></a>
+                    <a class="mx-4" href="#"><img id="instagram" class="icon" src="../assets/icons/instagram.svg"></a>
+                </div>
             </div>
         </div>
-        <div id="brown-area">
-            <div id="row1">
-                <img src="../assets/icons/footer-logo.svg">
-                <div id="lists">
-                    <ul class="list" id="list1">
-                      <li class="liHead">Popular</li>
-                      <li>Programming</li>
-                      <li>Books for children</li>
-                      <li>Psychology</li>
-                      <li>Business</li>  
-                    </ul>
-                    <ul class="list" id="list2">
-                        <li class="liHead">Information</li>
-                        <li>Delivery</li>
-                        <li>Payment</li>
-                        <li>About the store <br><br></li>
-                    </ul>
-                    <ul class="list" id="list3">
-                        <li class="liHead">Help</li>
-                        <li>Contacts</li>
-                        <li>Purchase returns</li>
-                        <li>Buyer help <br><br> </li>
+    </div>
+    <footer class="container-fluid pt-5 pb-3" style="background: #391f02; color:#fff;">
+        <div class="container">
+            <div class="row" style="text-wrap: nowrap;">
+                <div class="col-3 d-flex align-items-center justify-content-start"><img src="../assets/icons/footer-logo.svg" width="177px"></div>
+                <div class="col-2">
+                    <ul class="list" style="list-style:none">
+                        <li>Popular</li>
+                        <li style="font-size:13px">Programming</li>
+                        <li style="font-size:13px">Books for children</li>
+                        <li style="font-size:13px">Psychology</li>
+                        <li style="font-size:13px">Business</li>  
                     </ul>
                 </div>
-                <div id="call">
-                    <p id="phone-number">+38 (071) 339-16-26</p>
-                    <button id="call-btn">Request a call</button>
+                <div class="col-2">
+                    <ul class="list" style="list-style:none">
+                        <li>Information</li>
+                        <li style="font-size:13px">Delivery</li>
+                        <li style="font-size:13px">Payment</li>
+                        <li style="font-size:13px">About the store <br><br></li>
+                    </ul>
+                </div>
+                <div class="col-2">
+                    <ul class="list" style="list-style:none">
+                        <li>Help</li>
+                        <li style="font-size:13px">Contacts</li>
+                        <li style="font-size:13px">Purchase returns</li>
+                        <li style="font-size:13px">Buyer help<br><br></li>
+                    </ul>
+                </div>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                        <p style="font-size:12px">+38 (071) 339-16-26</p>
+                        <button class="btn btn-outline-transparent" style="font-size: 14px; border-color:#E16A00 !important; color:#E16A00">Request a call</button>
+                    </div>
                 </div>
             </div>
-            <div id="row2">
-                <p>All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy</p>
+            <div class="row mt-5">
+                <div class="col">
+                    <p class="text-center" style="font-size:12px">All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy</p>
+                </div>
             </div>
         </div>
     </footer>
