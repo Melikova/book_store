@@ -53,6 +53,21 @@
             </div>
             <div class="row" id="about">
                 <div class="col">About Store</div>
+                <form>
+                    <div class="mb-3">
+                      <label for="about_title" class="form-label">Title</label>
+                      <input type="text" class="form-control" id="about_title">
+                    </div>
+                    <div class="mb-3">
+                      <label for="about_image_url" class="form-label">Book Image URL</label>
+                      <input type="text" class="form-control" id="about_image_url">
+                    </div>
+                    <div class="mb-3">
+                        <label for="about_desc" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="about_desc">
+                      </div>
+                    <button type="button" class="btn w-100" id="about_submit_button">About Info Add</button>
+                  </form>
             </div>
             <div class="row" id="join">
                 <div class="col">Join Us</div>
@@ -74,6 +89,10 @@
 
         getUsersData();
         getContactsData();
+
+        $('#about_submit_button').click(()=>{
+            postAboutData($('#about_title').val(), $('#about_image_url').val(), $("#about_desc").val());
+        });
 
 
         function getUsersData() {
@@ -117,6 +136,12 @@
             $(table_id).append(thead);
             $(table_id).append(tbody);
         }
+
+        function postAboutData(title, url, desc) {
+            const db = getDatabase();
+            set(ref(db, 'about'), {about_title: title, image_url: url, description: desc});
+        }
+
 
       </script>
 </body>

@@ -42,6 +42,10 @@ nav #logo img{
     margin-right: 13px;
 }
 
+nav ul{
+    padding: 0;
+}
+
 nav a{
     color: #fff;
     text-decoration: none;
@@ -58,7 +62,6 @@ nav li{
 nav ul img{
     height: 35px;
     margin-right: 13px;
-    margin-left: 5px;
 }
 
 nav hr{
@@ -85,7 +88,7 @@ nav hr{
     font-size: 14px;
 }
 
-#contact div, #join div, #about div, #home div{
+#contact>div, #join>div, #about>div, #home>div{
     color: #333333;
     font-family: 'Montserrat';
     font-style: normal;
@@ -94,7 +97,7 @@ nav hr{
     line-height: 80px;
 }
 
-#join{
+#about, #join{
     margin-bottom: 154px;
 }
 
@@ -144,4 +147,9 @@ table tbody tr td{
 
 table tbody{
     color: #05111A;
+}
+
+#about form button{
+    background: #FF8B00;
+    color: #fff;
 }
