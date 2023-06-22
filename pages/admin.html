@@ -99,7 +99,7 @@
             const db = getDatabase();
             return onValue(ref(db, '/users'), (snapshot) => {
               const users = snapshot.val() || false;
-              createTable('#join_table', ['#', 'Full Name', 'Email Address'], users);
+              createJoinTable('#join_table', ['#', 'Full Name', 'Email Address'], users);
             }, {
               onlyOnce: true
             });
@@ -109,24 +109,49 @@
             const db = getDatabase();
             return onValue(ref(db, '/contacts'), (snapshot) => {
               const contacts = snapshot.val() || false;
-              createTable('#contacts_table', ['#', 'Full Name', 'Address', 'Email Address', 'Phone Number'], contacts);
+              createContactsTable('#contacts_table', ['#', 'Full Name', 'Address', 'Email Address', 'Phone Number', 'Note'], contacts);
             }, {
               onlyOnce: true
             });
         }
 
-        function createTable(table_id, col_names_arr, data){
+        function createJoinTable(table_id, col_names_arr, data){
             let thead=``; let tbody='';
             col_names_arr.forEach(element=>{
                 thead += `<th scope="col">${element}</th>`;
             });
             thead=`<thead><tr>${thead}</tr></thead>`;
-            if(data){
+            if(data){                                
                 Object.entries(data).forEach((element, key) => {
                 tbody += `<tr>
                             <th scope="row">${key+1}</th>
                             <td>${element[1].username}</td>
                             <td>${element[1].email}</td>
+                        </tr>`;
+            });
+            }else{
+                tbody=`<tr><th scope="row">1</th><td colspan="${col_names_arr.length}">No Data</td></tr>`;
+            }
+            tbody = `<tbody>${tbody}</tbody>`;
+            $(table_id).append(thead);
+            $(table_id).append(tbody);
+        }
+
+        function createContactsTable(table_id, col_names_arr, data){
+            let thead=``; let tbody='';
+            col_names_arr.forEach(element=>{
+                thead += `<th scope="col">${element}</th>`;
+            });
+            thead=`<thead><tr>${thead}</tr></thead>`;
+            if(data){                                
+                Object.entries(data).forEach((element, key) => {
+                tbody += `<tr>
+                            <th scope="row">${key+1}</th>
+                            <td>${element[1].name}</td>
+                            <td>${element[1].address}</td>
+                            <td>${element[1].email}</td>
+                            <td>${element[1].phone}</td>
+                            <td>${element[1].note}</td>
                         </tr>`;
             });
             }else{
