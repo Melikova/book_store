@@ -1,108 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title>Home | Library Store</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  </head>
-  <body class="p-3 m-0 border-0 bd-example m-0 border-0">
-
-    <header class="position-fixed fixed-top bg-white" style="border-bottom: 2px solid whitesmoke;">
-        <div class="container header">
-            <div class="w3-display-topleft w3-container">
-                <img src="./assets/assets/icons/logo.png"  alt="">
-            </div id="content-wrap">
-            <nav class="nav  flex-column flex-sm-row">
-                <a class="flex-sm-fill text-sm-center nav-link color_black fw-bold" href="./index.html">Home</a>
-                <a class="flex-sm-fill text-sm-center nav-link color_black fw-bold" href="./pages/catalog.html">Catalog</a>
-                <a class="flex-sm-fill text-sm-center nav-link color_black fw-bold" href="./pages/about.html">About Store</a>
-                <a class="flex-sm-fill text-sm-center nav-link color_black fw-bold" href="./pages/contact.html">Contact Us</a>
-                <a class="flex-sm-fill text-sm-center nav-link color_black fw-bold" href="./pages/search.html">Search</a>
-                <img src="./assets/assets/images/user.png" alt="">
-                <span class="ml-1 mt-1 position-relative fw-medium">
-                    Join
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/global.css">
+</head>
+  <body>
+    <div class="header container p-0" style="margin-bottom: 140px;">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid" style="color:#241400 !important">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/images/logo.svg" alt="" width="177px">
+                </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-4 mb-lg-0 w-100 justify-content-center">
+                  <li class="nav-item">
+                    <a id="homeEl" class="nav-link active" style="font-size:12px !important" aria-current="page" href="./index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="catalogEl" class="nav-link" style="font-size:12px !important" href="./pages/catalog.html">Catalog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="aboutEl" class="nav-link" style="font-size:12px !important" href="./pages/about.html">About store</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="contactEl" class="nav-link" style="font-size:12px !important" href="./pages/contact.html">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="searchEl" class="nav-link" style="font-size:12px !important" href="./pages/search.html">Search</a>
+                  </li>
+                </ul>
+                <span class="navbar-text" style="text-wrap:nowrap;">
+                    <div id="join">
+                        <img src="./assets/images/profile.svg" width="16px !important" alt="">
+                        <a style="font-size:14px !important" href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Join Us</a>
+                    </div>
                 </span>
-              </nav>
-                
-            </nav>
-        </div >
-    </header>
-
-
-     <footer id="footer">
-        <div class="row m-0">
-            <div class="col-md-12">
-                <div class="row justify-content-center ">
-                    <div class="col-md-4 p-0">
-                        <div class="jumbotron bg-transparent text-center text-main">
-                            <h1 class="h3 mb-4 font-weight-bolder">Follow us on social media</h1>
-                            <div class="row justify-content-center">
-                                <div class="col-md-3 social">
-                                    <img src="./assets/icons/facebook.svg" alt="facebook">
-                                </div>
-                                <div class="col-md-3 social">
-                                    <img src="./assets/icons/twitter.svg" alt="twitter">
-                                </div>
-                                <div class="col-md-3 social">
-                                    <img src="./assets/icons/instagram.svg" alt="instagram">
-                                </div>
-                            </div>
-                        </div>
+              </div>
+            </div>
+        </nav>
+    </div>
+    <main></main>
+    <footer class="container-fluid pt-5 pb-3" style="background: #391f02; color:#fff;">
+        <div class="container">
+            <div class="row" style="text-wrap: nowrap;">
+                <div class="col-3 d-flex align-items-center justify-content-start"><img src="./assets/icons/footer-logo.svg" width="177px"></div>
+                <div class="col-2">
+                    <ul class="list" style="list-style:none">
+                        <li>Popular</li>
+                        <li style="font-size:13px">Programming</li>
+                        <li style="font-size:13px">Books for children</li>
+                        <li style="font-size:13px">Psychology</li>
+                        <li style="font-size:13px">Business</li>  
+                    </ul>
+                </div>
+                <div class="col-2">
+                    <ul class="list" style="list-style:none">
+                        <li>Information</li>
+                        <li style="font-size:13px">Delivery</li>
+                        <li style="font-size:13px">Payment</li>
+                        <li style="font-size:13px">About the store <br><br></li>
+                    </ul>
+                </div>
+                <div class="col-2">
+                    <ul class="list" style="list-style:none">
+                        <li>Help</li>
+                        <li style="font-size:13px">Contacts</li>
+                        <li style="font-size:13px">Purchase returns</li>
+                        <li style="font-size:13px">Buyer help<br><br></li>
+                    </ul>
+                </div>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                        <p style="font-size:12px">+38 (071) 339-16-26</p>
+                        <button class="btn btn-outline-transparent" style="font-size: 14px; border-color:#E16A00 !important; color:#E16A00">Request a call</button>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-12 m-0 p-0">
-                <div class="jumbotron jumbotron-fluid bg-home-dark text-white p-4 m-0">
-                    <div class="container">
-                        <div class="row py-4">
-                            <div class="col-md-6">
-                                <div class="footer-logo">
-                                    <img width="200" src="./assets/icons/footer-logo.svg" alt="footer-logo">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item h5 bg-transparent color_white ">Popular</li>
-                                            <li class="list-group-item bg-transparent color_white">A second item</li>
-                                            <li class="list-group-item bg-transparent color_white">A third item</li>
-                                            <li class="list-group-item bg-transparent color_white">And a fifth one</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item h5 bg-transparent color_white">Information
-                                            </li>
-                                            <li class="list-group-item bg-transparent color_white">A second item</li>
-                                            <li class="list-group-item bg-transparent color_white">A third item</li>
-                                            <li class="list-group-item bg-transparent color_white">And a fifth one</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item h5 bg-transparent color_white">Help</li>
-                                            <li class="list-group-item bg-transparent color_white">A second item</li>
-                                            <li class="list-group-item bg-transparent color_white">A third item</li>
-                                            <li class="list-group-item bg-transparent color_white">And a fifth one</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
+            <div class="row mt-5">
+                <div class="col">
+                    <p class="text-center" style="font-size:12px">All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy</p>
                 </div>
             </div>
         </div>
-
     </footer>
-
-
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Join Us</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" placeholder="Full name">
+                <input type="text" placeholder="Email"><br>
+                <button id="joinBtn" style="background-color: #E16A00; text-align: center;width: 70%; height: 70px;" type="button" class="btn">Join</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- End of Modal -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
 </html>
