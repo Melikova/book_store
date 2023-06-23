@@ -120,6 +120,21 @@
             postAboutData($('#about_title').val(), $('#about_image_url').val(), $("#about_desc").val());
         });
 
+        $('#join_table').on('click', 'a', function (e){
+            e.preventDefault();
+            deleteDataFromTable('users', $(this).data('id'));
+            $('#join_table').html(' ');
+            getUsersData();
+        });
+
+        $('#contacts_table').on('click', 'a', function (e){
+            e.preventDefault();
+            deleteDataFromTable('contacts', $(this).data('id'));
+            $('#contacts_table').html(' ');
+            getContactsData();
+        });
+
+
         function getUsersData() {
             const db = getDatabase();
             return onValue(ref(db, '/users'), (snapshot) => {
@@ -152,7 +167,7 @@
                             <th scope="row">${key+1}</th>
                             <td>${element[1].username}</td>
                             <td>${element[1].email}</td>
-                            <td><a data-id="${element[0]}"><img width="16px" src="../assets/icons/trash-can-regular.svg" alt=""></a></td>
+                            <td><a href="#" data-id="${element[0]}"><img width="16px" src="../assets/icons/trash-can-regular.svg" alt=""></a></td>
                         </tr>`;
             });
             }else{
@@ -178,7 +193,7 @@
                             <td>${element[1].email}</td>
                             <td>${element[1].phone}</td>
                             <td>${element[1].note}</td>
-                            <td><a data-id="${element[0]}"><img width="16px" src="../assets/icons/trash-can-regular.svg" alt=""></a></td>
+                            <td><a href="#" data-id="${element[0]}"><img width="16px" src="../assets/icons/trash-can-regular.svg" alt=""></a></td>
                         </tr>`;
             });
             }else{
@@ -201,7 +216,6 @@
             }); 
         }
 
-        // deleteDataFromTable('users', '-NYb9etRWFV2vox0k6aU');
       </script>
 </body>
 </html>
