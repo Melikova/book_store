@@ -50,21 +50,47 @@
             </div>
             <div class="row" id="home">
                 <div class="col">Add book</div>
+                <p class="h4 py-3">Search Book</p>
+                <input type="text" id="search">
+                <p class="h4 py-3">Book Form</p>
+                <form class="bg-white shadow px-3 py-4 rounded">
+                    <div class="mb-3">
+                      <label for="book_title" class="form-label">Book Name</label>
+                      <input type="text" class="form-control shadow" id="book_title">
+                    </div>
+                    <div class="mb-3">
+                      <label for="book_author_name" class="form-label">Author Name</label>
+                      <input type="text" class="form-control shadow" id="book_author_name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="book_image_url" class="form-label">Book image URL</label>
+                        <input type="text" class="form-control shadow" id="book_image_url">
+                    </div>
+                    <div class="mb-3">
+                        <label for="book_desc" class="form-label">Description</label>
+                        <input type="text" class="form-control shadow" id="book_desc">
+                    </div>
+                    <div class="mb-3">
+                        <label for="book_type" class="form-label">Book Type</label>
+                        <input type="text" class="form-control shadow" id="book_type">
+                    </div>
+                    <button type="button" class="btn w-100" id="book_submit_button">Add</button>
+                  </form>
             </div>
             <div class="row" id="about">
                 <div class="col">About Store</div>
-                <form>
+                <form class="bg-white shadow px-3 py-4 rounded">
                     <div class="mb-3">
                       <label for="about_title" class="form-label">Title</label>
-                      <input type="text" class="form-control" id="about_title">
+                      <input type="text" class="form-control shadow" id="about_title">
                     </div>
                     <div class="mb-3">
                       <label for="about_image_url" class="form-label">Book Image URL</label>
-                      <input type="text" class="form-control" id="about_image_url">
+                      <input type="text" class="form-control shadow" id="about_image_url">
                     </div>
                     <div class="mb-3">
                         <label for="about_desc" class="form-label">Description</label>
-                        <input type="text" class="form-control" id="about_desc">
+                        <input type="text" class="form-control shadow" id="about_desc">
                       </div>
                     <button type="button" class="btn w-100" id="about_submit_button">About Info Add</button>
                   </form>
@@ -84,7 +110,7 @@
     <script src="../js/db_config.js"></script>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-        import { getDatabase, ref, set, push, onValue } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+        import { getDatabase, ref, set, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
         const app = initializeApp(firebaseConfig);
 
         getUsersData();
@@ -94,12 +120,11 @@
             postAboutData($('#about_title').val(), $('#about_image_url').val(), $("#about_desc").val());
         });
 
-
         function getUsersData() {
             const db = getDatabase();
             return onValue(ref(db, '/users'), (snapshot) => {
               const users = snapshot.val() || false;
-              createJoinTable('#join_table', ['#', 'Full Name', 'Email Address'], users);
+              createJoinTable('#join_table', ['#', 'Full Name', 'Email Address', 'Delete'], users);
             }, {
               onlyOnce: true
             });
@@ -109,7 +134,7 @@
             const db = getDatabase();
             return onValue(ref(db, '/contacts'), (snapshot) => {
               const contacts = snapshot.val() || false;
-              createContactsTable('#contacts_table', ['#', 'Full Name', 'Address', 'Email Address', 'Phone Number', 'Note'], contacts);
+              createContactsTable('#contacts_table', ['#', 'Full Name', 'Address', 'Email Address', 'Phone Number', 'Note', 'Delete'], contacts);
             }, {
               onlyOnce: true
             });
@@ -127,6 +152,7 @@
                             <th scope="row">${key+1}</th>
                             <td>${element[1].username}</td>
                             <td>${element[1].email}</td>
+                            <td><a data-id="${element[0]}"><img width="16px" src="../assets/icons/trash-can-regular.svg" alt=""></a></td>
                         </tr>`;
             });
             }else{
@@ -152,6 +178,7 @@
                             <td>${element[1].email}</td>
                             <td>${element[1].phone}</td>
                             <td>${element[1].note}</td>
+                            <td><a data-id="${element[0]}"><img width="16px" src="../assets/icons/trash-can-regular.svg" alt=""></a></td>
                         </tr>`;
             });
             }else{
@@ -167,7 +194,14 @@
             set(ref(db, 'about'), {about_title: title, image_url: url, description: desc});
         }
 
+        function deleteDataFromTable(table, id){
+            const db = getDatabase();
+            return remove(ref(db, `/${table}/${id}`)).then(() => {
+              console.log("location removed");
+            }); 
+        }
 
+        // deleteDataFromTable('users', '-NYb9etRWFV2vox0k6aU');
       </script>
 </body>
 </html>
