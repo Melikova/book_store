@@ -97,7 +97,7 @@ nav hr{
     line-height: 80px;
 }
 
-#about, #join{
+#about, #join, #home, #home #search{
     margin-bottom: 154px;
 }
 
@@ -149,7 +149,14 @@ table tbody{
     color: #05111A;
 }
 
-#about form button{
+#about form button, #home form button{
     background: #FF8B00;
     color: #fff;
 }
+
+#home #search{
+ border: 2px solid #391F00 48%;
+ border-radius: 34px;
+ width: 395px;
+}
+
