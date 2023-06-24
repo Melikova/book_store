@@ -1,6 +1,92 @@
 @import url(./font.css);
+#bookPage{
+    display:none;
+}
 #catalogEl{ 
     color:#E16A00 !important;
     text-decoration: underline !important;
     font-weight: 700 !important;
+
+}
+#sec1Header{
+    display: flex;
+    align-items: center;
+
+
+}
+#sliderNav a{
+    text-decoration: none;
+    color: #241400;
+    margin-right: 40px;
+}
+#sliderNav{
+    margin-left: 16%;
+}
+#sec1{
+    margin-top: 119px;
+    margin-left: 215px;
+}
+#allBooks{
+    font-size: 25px;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    line-height: 196.187%;
+    color: #241400;
+    
+}
+.newTag{
+    position: absolute;
+    width: 47px;
+    text-align: center;
+    align-items: center;
+    border-radius: 3px;
+    height: 13.578px;
+    right:0;
+    background-color: #EB5757;
+    top: 0;
+    color: #FFF;
+    font-size: 9px;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    line-height: 196.187%;
+    text-transform: uppercase;
+}
+.card{
+    position: relative;
+    width: fit-content;
+    background: #FFF;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+}
+.card img{
+    width: 130px;
+    margin:24px 24px 30px 25px ;
+}
+.bookName{
+    font-size: 14px;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    color: #241400;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.author{
+    font-size: 12px;
+    font-family: 'Montserrat';
+    color: #241400;
+    margin-bottom: 16px;
+    text-align: center;
+}
+.readBtn{
+    color: #FFF;
+    font-size: 12px;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    line-height: 196.187%;
+    text-transform: uppercase;
+    border-radius: 3px;
+    border: none;
+    margin-inline: 22px;
+    background: #E16A00;
+    box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
+    margin-bottom: 17px;
 }

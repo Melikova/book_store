@@ -5,370 +5,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalog Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/catalog.css">
-    <link rel="stylesheet" href="../js/jquery_slick_slide/slick/slick.css">
-    <link rel="stylesheet" href="../js/jquery_slick_slide/slick/slick-theme.css">
-    <style>
-        .slick-list{
-            padding-bottom: 20px !important;
-        }
-    </style>
 </head>
 <body>
-    <div class="header container p-0" style="margin-bottom: 140px;">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid" style="color:#241400 !important">
-                <a class="navbar-brand" href="#">
-                    <img src="../assets/images/logo.svg" alt="" width="177px">
-                </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-4 mb-lg-0 w-100 justify-content-center">
-                  <li class="nav-item">
-                    <a id="homeEl" class="nav-link active" style="font-size:12px !important" aria-current="page" href="../index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a id="catalogEl" class="nav-link" style="font-size:12px !important" href="../pages/catalog.html">Catalog</a>
-                  </li>
-                  <li class="nav-item">
-                    <a id="aboutEl" class="nav-link" style="font-size:12px !important" href="../pages/about.html">About store</a>
-                  </li>
-                  <li class="nav-item">
-                    <a id="contactEl" class="nav-link" style="font-size:12px !important" href="../pages/contact.html">Contact Us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a id="searchEl" class="nav-link" style="font-size:12px !important" href="../pages/search.html">Search</a>
-                  </li>
-                </ul>
-                <span class="navbar-text" style="text-wrap:nowrap;">
-                    <div id="join">
-                        <img src="../assets/images/profile.svg" width="16px !important" alt="">
-                        <a style="font-size:14px !important" href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Join Us</a>
-                    </div>
-                </span>
+    <header>
+        <div id="logo">
+          <img src="../assets/images/logo.svg"/>
+        </div>
+        <div id="navList">
+          <a id="homeEl" href="./index.html">Home</a>
+          <a id="catalogEl" href="./catalog.html">Catalog</a>
+          <a id="aboutEl" href="./about.html">About store</a>
+          <a id="contactEl" href="./contact.html">Contact Us</a>
+          <a id="searchEl" href="./search.html">Search</a>
+        </div>
+        <div id="join" style="cursor: pointer;">
+          <img src="../assets/images/profile.svg" data-bs-toggle="modal" data-bs-target="#exampleModal"/>
+          <a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Join Us</a>
+          <div id="hamBar"><img src="../assets/icons/hamburgerbar.svg" onclick="openNav()"></div>
+        </div>
+        <div id="myNav" class="overlay">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="overlay-content">
+            <a id="homeEl" href="./index.html">Home</a>
+            <a id="catalogEl" href="./catalog.html">Catalog</a>
+            <a id="aboutEl" href="./about.html">About store</a>
+            <a id="contactEl" href="./contact.html">Contact Us</a>
+            <a id="searchEl" href="./search.html">Search</a>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div class=" modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog ">
+            <div class="modal-content ">
+              <div class="modal-body container">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Join Us</h1>
+                <input id="nameinput" type="text" placeholder="Full name">
+                <input id="mailinput" type="text" placeholder="Email"><br>
+                <button type="button" class="joinBtn">Join</button>
               </div>
             </div>
-        </nav>
-    </div>
-    <main style="margin-bottom: 148px;">
-        <div id="categories" style="display: block;" class="container books mb-5">
-            <div class="row">
-                <div class="col">
-                    <div class="fs-4 fw-bolder mb-4" style="color:#241400">All Books</div>
-                </div>
-            </div>
-            <div class="row" style="margin-bottom: 148px;">
-                <div class="col">
-                    <div id="all_books" class="slider demo">
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_1.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_2.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_3.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_4.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_5.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_1.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_2.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_3.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                      </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="fs-4 fw-bolder mb-4" style="color:#241400">Bestseller</div>
-                </div>
-            </div>
-            <div class="row" style="margin-bottom: 148px;">
-                <div class="col">
-                    <div id="bestseller" class="slider demo">
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_1.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_2.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_3.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_4.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_5.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_1.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_2.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_3.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                      </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="fs-4 fw-bolder mb-4" style="color:#241400">New Releases</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div id="new_releases" class="slider demo">
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_1.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_2.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_3.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_4.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_5.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_1.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_2.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card border shadow" style="width:185px; height: 332px;">
-                                <div class="p-4"><img src="../assets/images/book_3.png" alt=""> </div>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div style="font-size:14px; font-weight:700">Order in Chaos</div>
-                                    <div style="font-size:12px">Konstantin Konstantin</div>
-                                    <button class="read_more" style="margin-top: 10px; background: #E16A00; width: 136px; height: 29px; font-size:12px; font-weight: 900; color:#fff; border: none; border-radius:3px">READ MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                      </div>
-                </div>
-            </div>
+          </div>
         </div>
-        <div id="read_more" style="display:none">
-        <div class="container book_details" style="margin-bottom:122px;">
-            <div class="row">
-                <div class="col">
-                    <a href="./catalog.html" class="btn d-flex align-items-center" style="width:100px; height: 29px; background: #E16A00 !important; color: #fff; font-size: 12px; text-align:left; padding:0 12px !important; font-weight: 900;"><img height="13px" style="margin-right:4px;" src="../assets/icons/angle-left-solid.svg" alt="">BACK</a>
+      </header>
+    <main >
+        <div id="catalog">
+            <section id="sec1">
+                <div id="sec1Header">
+                    <div id="allBooks">All Books</div>
+                    <div id="sliderNav">
+                        <a href="#">Fantastic</a>
+                        <a href="#">Self-development</a>
+                        <a href="#">Baby</a>
+                        <a href="#">Classic</a>
+                    </div>
+                </div>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="card">
+                            <div class="newTag">NEW</div>
+                            <img src="../assets/images/book_1.svg">
+                            <p class="bookName"> Order in Chaos</p>
+                            <p class="author">Konstantin Koptelov</p>
+                            <button class="readBtn">READ MORE</button>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card">
+                            <div class="newTag">NEW</div>
+                            <img src="../assets/images/book_1.svg">
+                            <p class="bookName"> Order in Chaos</p>
+                            <p class="author">Konstantin Koptelov</p>
+                            <button class="readBtn">READ MORE</button>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card">
+                            <div class="newTag">NEW</div>
+                            <img src="../assets/images/book_1.svg">
+                            <p class="bookName"> Order in Chaos</p>
+                            <p class="author">Konstantin Koptelov</p>
+                            <button class="readBtn">READ MORE</button>
+                        </div>2</div>
+                      <div class="swiper-slide">
+                        <div class="card">
+                            <div class="newTag">NEW</div>
+                            <img src="../assets/images/book_1.svg">
+                            <p class="bookName"> Order in Chaos</p>
+                            <p class="author">Konstantin Koptelov</p>
+                            <button class="readBtn">READ MORE</button>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card">
+                            <div class="newTag">NEW</div>
+                            <img src="../assets/images/book_1.svg">
+                            <p class="bookName"> Order in Chaos</p>
+                            <p class="author">Konstantin Koptelov</p>
+                            <button class="readBtn">READ MORE</button>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card">
+                            <div class="newTag">NEW</div>
+                            <img src="../assets/images/book_1.svg">
+                            <p class="bookName"> Order in Chaos</p>
+                            <p class="author">Konstantin Koptelov</p>
+                            <button class="readBtn">READ MORE</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <img src="../assets/icons/prevBtn.svg" class="swiper-button-prev">
+                    <img src="../assets/icons/nextBtn.svg" class="swiper-button-next">
+                  </div>
+            </section>
+        </div>
+        <div id="bookPage" style="margin-bottom: 148px; margin-top: 180px;">
+            <div class="container book_details" style="margin-bottom:122px;">
+                <div class="row">
+                    <div class="col">
+                        <div class="btn d-flex align-items-center" style="width:100px; height: 29px; background: #E16A00 !important; color: #fff; line-height: 29px; font-size: 12px; text-align:left; padding:0 12px !important; font-weight: 900;"><img height="13px" style="margin-right:4px;" src="../assets/icons/angle-left-solid.svg" alt="">BACK</div>
+                    </div>
+                </div>
+                <div class="row" style="color: #241400;">
+                    <div class="order-md-last col-12 col-md-5 d-flex justify-content-center"><img width="379px" src="../assets/images/catalog_image.png" alt=""></div>
+                    <div class="col-12 col-md-7" style="padding-top: 80px;">
+                        <div>
+                            <p class="btn p-0" style="cursor: default; width:69px; height: 23px; background: #2F80ED; font-size: 12px; font-weight: 900; color: #fff;">2017</p>
+                            <div style="font-weight: 700; font-size: 35px;">Order in Chaos</div>
+                            <p style="font-weight: 700; font-size: 16px;">2 days ago added</p>
+                            <p style="font-size: 22px;">Konstantin Koptelov</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur esse tenetur consequatur ducimus quos iure eius accusantium doloremque deleniti! Illo vel perspiciatis, error magnam voluptate molestias laborum necessitatibus quos obcaecati animi aliquam maiores blanditiis excepturi dignissimos accusamus dolorem. Blanditiis aut animi temporibus nisi assumenda perferendis, optio in enim culpa eaque. Voluptates obcaecati facilis iusto cum ab numquam deleniti vero vitae asperiores reprehenderit unde eius, vel in excepturi officia, voluptate aspernatur id ratione voluptatum. Minus, quod.</p>
+                            <div><a class="text-dark" href="#">More details</a></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row" style="color: #241400;">
-                <div class="order-md-last col-12 col-md-5 d-flex justify-content-center"><img width="379px" src="../assets/images/catalog_image.png" alt=""></div>
-                <div class="col-12 col-md-7" style="padding-top: 80px;">
-                    <div>
-                        <p class="btn p-0" style="cursor: default; width:69px; height: 23px; background: #2F80ED; font-size: 12px; font-weight: 900; color: #fff;">2017</p>
-                        <div style="font-weight: 700; font-size: 35px;">Order in Chaos</div>
-                        <p style="font-weight: 700; font-size: 16px;">2 days ago added</p>
-                        <p style="font-size: 22px;">Konstantin Koptelov</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur esse tenetur consequatur ducimus quos iure eius accusantium doloremque deleniti! Illo vel perspiciatis, error magnam voluptate molestias laborum necessitatibus quos obcaecati animi aliquam maiores blanditiis excepturi dignissimos accusamus dolorem. Blanditiis aut animi temporibus nisi assumenda perferendis, optio in enim culpa eaque. Voluptates obcaecati facilis iusto cum ab numquam deleniti vero vitae asperiores reprehenderit unde eius, vel in excepturi officia, voluptate aspernatur id ratione voluptatum. Minus, quod.</p>
-                        <div><a class="text-dark" href="#">More details</a></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-7">
+                        <div class="input-group mb-5">
+                            <input type="text" class="form-control p-3" placeholder="Your anonim comment" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <button style="background-color: #E16A00;" class="btn" type="button" id="basic-addon2"><img width="28px" src="../assets/icons/send.png" alt=""></button>
+                        </div>          
+                        <div class="bg-white p-3 border rounded my-4">
+                            <div class="mb-3"><span class="me-2 fw-bolder">anonim</span><span>18:32 today</span></div>
+                            <div>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!</div>
+                        </div> 
+                        <div class="bg-white p-3 border rounded">
+                            <div class="mb-3"><span class="me-2 fw-bolder">anonim</span><span>18:32 today</span></div>
+                            <div>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!</div>
+                        </div>            
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-7">
-                    <div class="input-group mb-5">
-                        <input type="text" class="form-control p-3" placeholder="Your anonim comment" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                        <button style="background-color: #E16A00;" class="btn" type="button" id="basic-addon2"><img width="28px" src="../assets/icons/send.png" alt=""></button>
-                    </div>          
-                    <div class="bg-white p-3 border rounded my-4">
-                        <div class="mb-3"><span class="me-2 fw-bolder">anonim</span><span>18:32 today</span></div>
-                        <div>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!</div>
-                    </div> 
-                    <div class="bg-white p-3 border rounded">
-                        <div class="mb-3"><span class="me-2 fw-bolder">anonim</span><span>18:32 today</span></div>
-                        <div>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!</div>
-                    </div>            
-                </div>
-            </div>
-        </div>
-    </div>
     </main>
     <div class="container-fluid">
         <div class="row">
@@ -384,7 +180,7 @@
     </div>
     <footer class="container-fluid pt-5 pb-3" style="background: #391f02; color:#fff;">
         <div class="container">
-            <div class="row" style="text-wrap: nowrap;">
+            <div class="row" style="flex-wrap: nowrap;">
                 <div class="col-3 d-flex align-items-center justify-content-start"><img src="../assets/icons/footer-logo.svg" width="177px"></div>
                 <div class="col-2">
                     <ul class="list" style="list-style:none">
@@ -425,47 +221,39 @@
             </div>
         </div>
     </footer>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Join Us</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <input type="text" placeholder="Full name">
-                <input type="text" placeholder="Email"><br>
-                <button id="joinBtn" style="background-color: #E16A00; text-align: center;width: 70%; height: 70px;" type="button" class="btn">Join</button>
-            </div>
-          </div>
-        </div>
-    </div>
-    <!-- End of Modal -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../js/responsive.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <script src="../js/jquery_slick_slide/slick/slick.js"></script>
     <script>
-        $(document).ready(function(){
-          $('.demo').slick({
-            dots: false,
-            slidesToShow: 5,
-            arrows:true,
-            prevArrow:'<img class="slick-prev" style="height:auto !important; left:-35px !important" src="../assets/icons/Vector 2.png" alt="">',
-            nextArrow:'<img class="slick-next" style="height:auto !important; right:-35px !important" src="../assets/icons/Vector 3.png" alt="">',
-            autoplay:false,
-            infinite:true,
-            centerMode:false
-          });
-
-          $('.read_more').on('click', function(e){
-            e.preventDefault();
-            console.log('ll');
-            $('#categories').attr("style", "display:none");
-            $('#read_more').attr("style", "display:block");
-        })
+        import Swiper from 'https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.esm.browser.min.js'
+        const swiper = new Swiper(".swiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        480: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        },
+        640: {
+          slidesPerView: 4,
+          spaceBetween: 40
+        }
+       },
+        loop:true,
+        speed: 800,
+        slidesPerView:5,
+        autoplay: {
+            running: true
+        }
         });
+      console.log(swiper);
     </script>
 </body>
 </html>
