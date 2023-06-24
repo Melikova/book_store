@@ -11,8 +11,7 @@
 #sec1Header{
     display: flex;
     align-items: center;
-
-
+    margin-bottom: 61px;
 }
 #sliderNav a{
     text-decoration: none;
@@ -22,7 +21,7 @@
 #sliderNav{
     margin-left: 16%;
 }
-#sec1{
+#catalog{
     margin-top: 119px;
     margin-left: 215px;
 }
@@ -53,6 +52,7 @@
 }
 .card{
     position: relative;
+    margin-left: 5px;
     width: fit-content;
     background: #FFF;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
@@ -89,4 +89,30 @@
     background: #E16A00;
     box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
     margin-bottom: 17px;
+}
+.swiper{
+    width: 100%;
+    position: relative;
+    display: flex;
+    margin-bottom: 206px;
+    justify-content: center;
+    height: 100%;
+}
+#sec2Header{
+    font-size: 25px;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    text-align: center;
+    color: #241400;
+    margin-top: 128px;
+    margin-bottom: 40px;
+}
+#sec3Header{
+    font-size: 25px;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    text-align: center;
+    color: #241400;
+    margin-top: 171px;
+    margin-bottom: 40px;
 }
