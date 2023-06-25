@@ -9,11 +9,7 @@
     <link rel="stylesheet" href="../css/catalog.css">
     <link rel="stylesheet" href="../js/jquery_slick_slide/slick/slick.css">
     <link rel="stylesheet" href="../js/jquery_slick_slide/slick/slick-theme.css">
-    <style>
-        .slick-list{
-            padding-bottom: 20px !important;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.raty/2.7.0/jquery.raty.min.css">
 </head>
 <body>
     <div class="header container p-0" style="margin-bottom: 140px;">
@@ -53,7 +49,7 @@
             </div>
         </nav>
     </div>
-    <main style="margin-bottom: 148px;">
+    <main>
         <div id="categories" style="display: block;" class="container books mb-5">
             <div class="row">
                 <div class="col">
@@ -330,47 +326,57 @@
             </div>
         </div>
         <div id="read_more" style="display:none">
-        <div class="container book_details" style="margin-bottom:122px;">
-            <div class="row">
-                <div class="col">
-                    <a href="./catalog.html" class="btn d-flex align-items-center" style="width:100px; height: 29px; background: #E16A00 !important; color: #fff; font-size: 12px; text-align:left; padding:0 12px !important; font-weight: 900;"><img height="13px" style="margin-right:4px;" src="../assets/icons/angle-left-solid.svg" alt="">BACK</a>
+            <div class="container book_details position-relative" style="margin-bottom:122px;">
+                <div class="w-100 h-100 position-absolute d-flex justify-content-center align-items-center">
+                    <div class="spinner-border text-warning" style="width:70px; height:70px" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <a href="./catalog.html" class="btn d-flex align-items-center" style="width:100px; height: 29px; background: #E16A00 !important; color: #fff; font-size: 12px; text-align:left; padding:0 12px !important; font-weight: 900;"><img height="13px" style="margin-right:4px;" src="../assets/icons/angle-left-solid.svg" alt="">BACK</a>
+                    </div>
+                </div>
+                <div class="row" style="color: #241400;">
+                    <div class="order-md-last col-12 col-md-5 d-flex justify-content-center"><img width="379px" src="../assets/images/catalog_image.png" alt=""></div>
+                    <div class="col-12 col-md-7" style="padding-top: 80px;">
+                        <div>
+                            <p class="btn p-0" style="cursor: default; width:69px; height: 23px; background: #2F80ED; font-size: 12px; font-weight: 900; color: #fff;">2017</p>
+                            <div style="font-weight: 700; font-size: 35px;">Order in Chaos</div>
+                            <p style="font-weight: 700; font-size: 16px;">2 days ago added</p>
+                            <p style="font-size: 22px;">Konstantin Koptelov</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur esse tenetur consequatur ducimus quos iure eius accusantium doloremque deleniti! Illo vel perspiciatis, error magnam voluptate molestias laborum necessitatibus quos obcaecati animi aliquam maiores blanditiis excepturi dignissimos accusamus dolorem. Blanditiis aut animi temporibus nisi assumenda perferendis, optio in enim culpa eaque. Voluptates obcaecati facilis iusto cum ab numquam deleniti vero vitae asperiores reprehenderit unde eius, vel in excepturi officia, voluptate aspernatur id ratione voluptatum. Minus, quod.</p>
+                            <div><a class="text-dark" href="#">More details</a></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row" style="color: #241400;">
-                <div class="order-md-last col-12 col-md-5 d-flex justify-content-center"><img width="379px" src="../assets/images/catalog_image.png" alt=""></div>
-                <div class="col-12 col-md-7" style="padding-top: 80px;">
-                    <div>
-                        <p class="btn p-0" style="cursor: default; width:69px; height: 23px; background: #2F80ED; font-size: 12px; font-weight: 900; color: #fff;">2017</p>
-                        <div style="font-weight: 700; font-size: 35px;">Order in Chaos</div>
-                        <p style="font-weight: 700; font-size: 16px;">2 days ago added</p>
-                        <p style="font-size: 22px;">Konstantin Koptelov</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur esse tenetur consequatur ducimus quos iure eius accusantium doloremque deleniti! Illo vel perspiciatis, error magnam voluptate molestias laborum necessitatibus quos obcaecati animi aliquam maiores blanditiis excepturi dignissimos accusamus dolorem. Blanditiis aut animi temporibus nisi assumenda perferendis, optio in enim culpa eaque. Voluptates obcaecati facilis iusto cum ab numquam deleniti vero vitae asperiores reprehenderit unde eius, vel in excepturi officia, voluptate aspernatur id ratione voluptatum. Minus, quod.</p>
-                        <div><a class="text-dark" href="#">More details</a></div>
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col">
+                        <div id="star-rating" data-score="0"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-7">
+                        <div class="input-group mb-5">
+                            <input id="comment_text" type="text" class="form-control p-3" placeholder="Your anonim comment" aria-label="Recipient's username" aria-describedby="comment_send_button">
+                            <button style="background-color: #E16A00;" class="btn" type="button" id="comment_send_button"><img width="28px" src="../assets/icons/send.png" alt=""></button>
+                        </div>  
+                        <div id="comments_list">        
+                            <div class="bg-white p-3 border rounded my-4">
+                                <div class="mb-3"><span class="me-2 fw-bolder">anonim</span><span>18:32 today</span></div>
+                                <div>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!</div>
+                            </div> 
+                            <div class="bg-white p-3 border rounded">
+                                <div class="mb-3"><span class="me-2 fw-bolder">anonim</span><span>18:32 today</span></div>
+                                <div>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!</div>
+                            </div>  
+                        </div>          
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-7">
-                    <div class="input-group mb-5">
-                        <input id="comment_text" type="text" class="form-control p-3" placeholder="Your anonim comment" aria-label="Recipient's username" aria-describedby="comment_send_button">
-                        <button style="background-color: #E16A00;" class="btn" type="button" id="comment_send_button"><img width="28px" src="../assets/icons/send.png" alt=""></button>
-                    </div>  
-                    <div id="comments_list">        
-                        <div class="bg-white p-3 border rounded my-4">
-                            <div class="mb-3"><span class="me-2 fw-bolder">anonim</span><span>18:32 today</span></div>
-                            <div>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!</div>
-                        </div> 
-                        <div class="bg-white p-3 border rounded">
-                            <div class="mb-3"><span class="me-2 fw-bolder">anonim</span><span>18:32 today</span></div>
-                            <div>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!</div>
-                        </div>  
-                    </div>          
-                </div>
-            </div>
-        </div>
-    </div>
     </main>
     <div class="container-fluid">
         <div class="row">
@@ -448,27 +454,11 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="../js/jquery_slick_slide/slick/slick.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-raty-js@2.8.0/lib/jquery.raty.min.js"></script>
     <script src="../js/db_config.js"></script>
+    <script src="../js/catalog.js"></script>
     <script>
-        $(document).ready(function(){
-          $('.demo').slick({
-            dots: false,
-            slidesToShow: 5,
-            arrows:true,
-            prevArrow:'<img class="slick-prev" style="height:auto !important; left:-35px !important" src="../assets/icons/Vector 2.png" alt="">',
-            nextArrow:'<img class="slick-next" style="height:auto !important; right:-35px !important" src="../assets/icons/Vector 3.png" alt="">',
-            autoplay:false,
-            infinite:true,
-            centerMode:false
-          });
-
-          $('.read_more').on('click', function(e){
-            e.preventDefault();
-            console.log('ll');
-            $('#categories').attr("style", "display:none");
-            $('#read_more').attr("style", "display:block");
-        })
-        });
+        $('.spinner-border').parent().addClass("d-none");
     </script>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
@@ -481,18 +471,35 @@
         }
 
         $('#comment_send_button').click(()=>{
-            writeCommentData('today', '18:34pm', 'anonim', $('#comment_text').val());
+            writeCommentData('today', '20:36', 'anonim', $('#comment_text').val());
             $('#comment_text').val('');
+            getCommentsData();
         });
 
         function getCommentsData() {
             const db = getDatabase();
             return onValue(ref(db, '/comments'), (snapshot) => {
               const comments = snapshot.val() || false;
-              console.log(comments);
+              createCommentCard(comments);
             }, {
               onlyOnce: true
             });
+        }
+
+        function createCommentCard(data){
+            let card='';
+            if(data){                                
+                Object.entries(data).forEach((element, key) => {
+                    card+=`<div class="bg-white p-3 border rounded my-4">
+                            <div class="mb-3"><span class="me-2 fw-bolder">${element[1].sender}</span><span>${element[1].time} ${element[1].date}</span></div>
+                            <div>${element[1].text}</div>
+                        </div> `;
+                    console.log(element[1]);
+            });
+            }else{
+                card=``;
+            }
+            $('#comments_list').html(card);
         }
 
         getCommentsData();
