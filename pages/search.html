@@ -24,22 +24,30 @@
         <a id="contactEl" href="./contact.html">Contact Us</a>
         <a id="searchEl" href="./search.html">Search</a>
       </div>
-      <div id="join">
-        <img src="../assets/images/profile.svg" alt="" />
-        <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Join Us</a>
+      <div id="join" style="cursor: pointer;">
+        <img src="../assets/images/profile.svg" data-bs-toggle="modal" data-bs-target="#exampleModal"/>
+        <a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Join Us</a>
+        <div id="hamBar"><img src="../assets/icons/hamburgerbar.svg" onclick="openNav()"></div>
+      </div>
+      <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+          <a id="homeEl" href="./index.html">Home</a>
+          <a id="catalogEl" href="./catalog.html">Catalog</a>
+          <a id="aboutEl" href="./about.html">About store</a>
+          <a id="contactEl" href="./contact.html">Contact Us</a>
+          <a id="searchEl" href="./search.html">Search</a>
+        </div>
       </div>
       <!-- Modal -->
-      <div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
+      <div class=" modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+          <div class="modal-content ">
+            <div class="modal-body container">
               <h1 class="modal-title fs-5" id="exampleModalLabel">Join Us</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <input id="user_fullname" type="text" placeholder="Full name"/>
-              <input id="user_email" type="text" placeholder="Email" /><br/>
-              <button id="joinBtn" style="background-color: #e16a00; text-align: center; width: 70%; height: 70px;" type="button" class="btn">Join</button>
+              <input id="nameinput" type="text" placeholder="Full name">
+              <input id="mailinput" type="text" placeholder="Email"><br>
+              <button type="button" class="joinBtn">Join</button>
             </div>
           </div>
         </div>
@@ -57,10 +65,10 @@
             <div class="swiper-slide">
               <div class="card">
                 <img src="../assets/images/book_1.svg" />
-                <div id="book-info">
-                  <p id="book-name">Order in Chaos</p>
-                  <p id="author">Konstantin Koptelov</p>
-                  <p id="book-content">
+                <div class="book-info">
+                  <p class="book-name">Order in Chaos</p>
+                  <p class="author">Konstantin Koptelov</p>
+                  <p class="book-content">
                     We work without holidays and weekends! Residents of Kiev can
                     receive an order on the day of its registration. Customers
                     from other cities of Ukraine can receive an order within 1-5
@@ -76,10 +84,10 @@
             <div class="swiper-slide">
                 <div class="card">
                   <img src="../assets/images/book_1.svg" />
-                  <div id="book-info">
-                    <p id="book-name">Order in Chaos</p>
-                    <p id="author">Konstantin Koptelov</p>
-                    <p id="book-content">
+                  <div class="book-info">
+                    <p class="book-name">Order in Chaos</p>
+                    <p class="author">Konstantin Koptelov</p>
+                    <p class="book-content">
                       We work without holidays and weekends! Residents of Kiev can
                       receive an order on the day of its registration. Customers
                       from other cities of Ukraine can receive an order within 1-5
@@ -94,18 +102,9 @@
               </div>
           </div>
           <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+          <img class="swiper-button-prev" src="../assets/icons/prevBtn.svg" style="margin-left: 30px;">
+          <img class="swiper-button-next" src="../assets/icons/nextBtn.svg">
         </div>
-
-        <!-- <div class="card">
-                <img src="../assets/images/book_1.svg">
-                <div id="book-info">
-                    <p id="book-name">Order in Chaos</p>
-                    <p id="author">Konstantin Koptelov</p>
-                    <p id="book-content">We work without holidays and weekends! Residents of Kiev can receive an order on the day of its registration. Customers from other cities of Ukraine can receive an order within 1-5 days, depending on the location of the settlement and the selected delivery method. Orders over UAH 1000 are delivered  free of charge *. You can see the available methods, exact terms and cost of delivery during checkout in the order basket, after selecting the delivery city</p>
-                </div>
-            </div> -->
       </div>
     </main>
     <!-- FOOTER -->
@@ -115,7 +114,11 @@
         <div id="media-icon">
           <img id="facebook" class="icon" src="../assets/icons/facebook.svg" />
           <img id="twitter" class="icon" src="../assets/icons/twitter.svg" />
-          <img id="instagram" class="icon" src="../assets/icons/instagram.svg"/>
+          <img
+            id="instagram"
+            class="icon"
+            src="../assets/icons/instagram.svg"
+          />
         </div>
       </div>
       <div id="brown-area">
@@ -173,6 +176,7 @@
     </div> -->
     <!-- End of Modal -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../js/responsive.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="../js/db_config.js"></script>
@@ -202,7 +206,19 @@
         $('#joinBtn').click(()=>{
             writeUserData($('#user_fullname').val(), $('#user_email').val());
         });
-
+        import Swiper from "https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.esm.browser.min.js";
+        const swiper = new Swiper(".swiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        loop:true,
+        speed: 800,
+        autoplay: {
+            running: true
+        }
+        });
+      console.log(swiper);
       </script>
 </body>
 </html>

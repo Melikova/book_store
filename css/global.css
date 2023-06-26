@@ -1,9 +1,4 @@
 @import url(./font.css);
-*, html, body{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
 body{
     background-color: #FFFAF5;
     
@@ -12,21 +7,21 @@ header{
     margin-left: 215px;
     display: flex;
     justify-content: space-between;
-    text-align: center;
+    align-items: center;
     margin-top: 31px;
     margin-right: 92px;
-    
-    
 }
 #join{
     display: flex;
-    
     align-items: center;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
+}
+#hamBar{
+    display: none;
 }
 #join a{
     margin-left: 8px;
@@ -43,9 +38,8 @@ header{
 #navList{
     display: flex;
     align-items: center;
-
-
 }
+
 #navList a{
     margin-right: 21px;
     text-decoration: none;
@@ -55,25 +49,131 @@ header{
     font-weight: 400;
     font-size: 12px;
 }
-.modal-header h1{
-    margin-left: 40%;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 44px;
-    line-height: 54px;
-    text-align: center;
-
+.modal-body input {
+    width: 560px;
+    height: 76px;
+    color: #797667;
+    font-size: 19px;
+    font-family: 'Crimson Text';
+    padding-left:52px;
+    border: 1px solid #CECECE;
+    background: #FFF;
+    margin:0px 55px 35px 55px;
 }
-#joinBtn{
+.modal-body h1{
+    text-align: center !important;
+    font-family: 'Montserrat'!important;
+    font-style: normal!important;
+    font-weight: 700!important;
+    font-size: 44px!important;
+    line-height: 54px!important;
+    margin-top: 70px!important;
+    margin-bottom: 17px!important;
+}
+.modal-content{
+    width: fit-content;
+    
+    margin-top: 40px;
+    
+}
+.modal-body{
+    display: flex;
+    margin-inline: auto !important;
+    flex-direction: column;
+    padding: 0 !important;
+    width: fit-content !important;
+    text-align: center;
+}
+.joinBtn{
     font-family: 'Crimson Text';
     font-style: normal;
     font-weight: 700;
     font-size: 19px;
     line-height: 25px;
+    width: 100%;
     color: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid #CECECE;
+    background-color: #E16A00;
+    width: 560px;
+    height: 76px;
+    margin-inline:auto;
+    margin-top: 51px;
+    margin-bottom: 35px;
     text-align: center;
 }
+@media only screen and (max-width: 500px) {
+    body {
+      overflow-x: hidden!important;
+    }
+    header{
+        margin-left: 15px;
+        margin-right: 18px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+    }
+    #navList, #join a{
+        display: none;
+    }
+    #hamBar{
+        display: block;
+        cursor: pointer;
+        margin-left: 22px;
+    }
+    #lists{
+        flex-direction: column;
+        text-align: center;
+    }
+    #row1{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    display: flex;
+    
+    flex-direction: column;
+    top: 25%;
+    width: 100%;
+    text-align: right;
+    margin-top: 30px;
+  }
+  
+  .overlay a {
+    font-size: 17px;
+    margin-right: 17px;
+    color: #F2F2F2;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    line-height: 196.187%;
+    transition: 0.3s;
+  }
+  
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
 #social-media p{
     font-family: 'Montserrat';
     text-align: center;
