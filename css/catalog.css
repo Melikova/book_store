@@ -133,3 +133,16 @@ main{
         width:230px !important;
     }
 }
+
+@media (max-width: 768px) {
+
+    
+    #desktop {
+        display: none;
+    }
+
+    #mobile {
+        display: block !important;
+    }
+
+}

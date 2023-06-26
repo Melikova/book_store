@@ -52,7 +52,7 @@
     <main>
         <div id="categories" style="display: block;" class="container books mb-5">
             <div class="row">
-                <div class="col">
+                <div class="d-flex justify-content-center">
                     <div class="fs-4 fw-bolder mb-4" style="color:#241400">All Books</div>
                 </div>
             </div>
@@ -143,7 +143,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="d-flex justify-content-center">
                     <div class="fs-4 fw-bolder mb-4" style="color:#241400">Bestseller</div>
                 </div>
             </div>
@@ -234,7 +234,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="d-flex justify-content-center">
                     <div class="fs-4 fw-bolder mb-4" style="color:#241400">New Releases</div>
                 </div>
             </div>
@@ -390,7 +390,29 @@
             </div>
         </div>
     </div>
-    <footer class="container-fluid pt-5 pb-3" style="background: #391f02; color:#fff;">
+    <!-- Mobile FOOter -->
+      <footer id="mobile" class="d-none">
+      <div class="container-fluid text-center" style="background-color: #391f02;">
+      <div class="row">
+        <div class="mt-2" style="font-size: 60px;"><img src="../assets/icons/footer-logo.svg"></div>
+      </div> 
+      <div class="d-flex justify-content-center mb-4">
+       <ul class="d-flex justify-content-around" style="list-style: none; width: 80%; padding-right: 10px;">
+        <li>Home</li>
+        <li>Catalog</li>
+        <li>About</li>
+        <li>Contact Us</li>
+        <li>Search</li>
+       </ul>
+      </div>
+      <div style="border-bottom: 2px solid #fff; width: 80%; margin: 0 auto;" ></div>
+      <div style="font-size: 16px; color: #fff; margin-top: 10px;">Library Bookstore EAcamp</div>
+      <div style="color: #fff; margin-top: 5px; font-size: 16px;">© 2003-2021</div>
+      </div>
+    </footer>
+
+    <!-- Desktop Footer -->
+    <footer id="desktop" class="container-fluid pt-5 pb-3" style="background: #391f02; color:#fff;">
         <div class="container">
             <div class="row" style="text-wrap: nowrap;">
                 <div class="col-3 d-flex align-items-center justify-content-start"><img src="../assets/icons/footer-logo.svg" width="177px"></div>
