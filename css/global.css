@@ -1,158 +1,206 @@
 @import url(./font.css);
-*, html, body{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+.footer .content {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1.5rem;
 }
-body{
-    background-color: #FFFAF5;
-    
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
-header{
-    margin-left: 215px;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    margin-top: 31px;
-    margin-right: 92px;
-    
-    
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }  .footer-links li {
+    display: block;
+    margin: 5px 0;
+  }
 }
-#join{
-    display: flex;
-    
-    align-items: center;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
+@media (min-width: 768px) and (max-width: 1024px) {
+  .footer-links li,
+  .footer-content {
     font-size: 14px;
-    line-height: 16px;
+  }
 }
-#join a{
-    margin-left: 8px;
-    padding-bottom: 4px;
-    text-decoration: none;
-    color: black;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
+/* @media (orientation: landscape) and (max-height: 500px) {
+  .footer-links li {
+    position: unset;
+  }
+} * */
+
+/* @media (max-width: 767px) {
+  .footer-content .footer-links li {
+    display: flex;
+    flex-direction: column;
     font-size: 14px;
-    line-height: 16px;
+  }
+
+  .footer-content {
+    position: unset;
+  }
 }
 
-#navList{
-    display: flex;
-    align-items: center;
+@media (min-width: 768px) and (max-width: 1024px) {
+  .footer-links li,
+  .footer-content {
+    font-size: 14px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .footer-links li {
+    position: unset;
+  }
+} */
 
 
-}
-#navList a{
-    margin-right: 21px;
-    text-decoration: none;
-    color: black;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-}
-.modal-header h1{
-    margin-left: 40%;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 44px;
-    line-height: 54px;
-    text-align: center;
 
-}
-#joinBtn{
-    font-family: 'Crimson Text';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 19px;
-    line-height: 25px;
-    color: #FFFFFF;
-    text-align: center;
-}
-#social-media p{
-    font-family: 'Montserrat';
-    text-align: center;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 25px;
-    color: #241400;
-    line-height: 196.19%;
-    margin-bottom: 30px;
-}
-#media-icon{
-    display: flex;
 
-    justify-content: center;
-    margin-inline: auto;
+body {
+  background-color: #fffaf5;
 }
-.icon{
-    margin-left: 54px;
-    /* align-items: center; */
-    margin-bottom: 68px;
+header {
+  margin-left: 215px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 31px;
+  margin-right: 92px;
 }
-.icon:first-child{
-    margin-left: 0px !important;
+#join {
+  display: flex;
+
+  align-items: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
 }
-#brown-area{
-    background-color:#391F00;
-    align-items: center;
-    padding-top: 56px;
+#join a {
+  margin-left: 8px;
+  padding-bottom: 4px;
+  text-decoration: none;
+  color: black;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
 }
-#row1{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-bottom: 50px;
-    
+
+#navList {
+  display: flex;
+  align-items: center;
 }
-ul li{
-    color: white;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 196.19%;
+#navList a {
+  margin-right: 21px;
+  text-decoration: none;
+  color: black;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
 }
-.liHead{
-    font-size: 24px !important;
+.modal-header h1 {
+  margin-left: 40%;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 54px;
+  text-align: center;
 }
-#lists{
-    display: flex;
-    flex-wrap: wrap;
+#joinBtn {
+  font-family: "Crimson Text";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 25px;
+  color: #ffffff;
+  text-align: center;
 }
-.list{
-    margin-right: 91px;
+#social-media p {
+  font-family: "Montserrat";
+  text-align: center;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 25px;
+  color: #241400;
+  line-height: 196.19%;
+  margin-bottom: 30px;
 }
-#phone-number{
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 900;
-    color: #FFFFFF;
-    margin-bottom: 10px;
-    font-size: 12px;
-    line-height: 196.19%;
+#media-icon {
+  display: flex;
+
+  justify-content: center;
+  margin-inline: auto;
 }
-#call{
-    text-align: center;
+.icon {
+  margin-left: 54px;
+  /* align-items: center; */
+  margin-bottom: 68px;
 }
-#call button{
-    color:#E16A00 ;
-    padding: 4px 6px;
-    border: 1px solid #E16A00;
-    background-color:transparent;
+.icon:first-child {
+  margin-left: 0px !important;
 }
-#row2 p{
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 196.19%;
-    color: #FFFFFF;
-    text-align: center;
+#brown-area {
+  background-color: #391f00;
+  align-items: center;
+  padding-top: 56px;
+}
+#row1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 50px;
+}
+ul li {
+  color: white;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 196.19%;
+}
+.liHead {
+  font-size: 24px !important;
+}
+#lists {
+  display: flex;
+  flex-wrap: wrap;
+}
+.list {
+  margin-right: 91px;
+}
+#phone-number {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 196.19%;
+}
+#call {
+  text-align: center;
+}
+#call button {
+  color: #e16a00;
+  padding: 4px 6px;
+  border: 1px solid #e16a00;
+  background-color: transparent;
+}
+#row2 p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 196.19%;
+  color: #ffffff;
+  text-align: center;
 }
