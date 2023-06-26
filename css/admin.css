@@ -3,6 +3,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    background: #fffaf5;
     min-height: 100vh;
 }
 
@@ -67,7 +68,25 @@ nav ul img{
 nav hr{
     margin: 5px 0;
 }
-
+/* @media only screen and (max-width: 800px) {
+    nav{
+        display:none !important;
+    }
+    main{
+        margin-left: 0px !important;
+        width: 100%;
+    }
+    #user{
+        display: none;
+    }
+    #responsiveNav{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+#responsiveNav{
+    display: none;
+} */
 #main{
     margin-left: 355px;
     padding: 58px 58px 200px 35px;
@@ -97,7 +116,7 @@ nav hr{
     line-height: 80px;
 }
 
-#about, #join, #home, #home #search{
+#about, #join{
     margin-bottom: 154px;
 }
 
@@ -149,14 +168,7 @@ table tbody{
     color: #05111A;
 }
 
-#about form button, #home form button{
+#about form button{
     background: #FF8B00;
     color: #fff;
 }
-
-#home #search{
- border: 2px solid #391F00 48%;
- border-radius: 34px;
- width: 395px;
-}
-
