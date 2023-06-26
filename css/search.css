@@ -21,19 +21,21 @@ main{
     margin-left: 215px;
 }
 @media only screen and (max-width: 500px) {
-    #title{
-        text-align: center;
-        margin-top: 43px;
-        margin-bottom: 28px;
-        font-size: 25px;
-        line-height: 196.187%;
-        font-family: 'Montserrat';
-        font-weight: 900;
-    }
     main{
         margin-left: 0px !important;
+        margin-top: 0px !important;
         
     }
+    #title{
+        text-align: center;
+        margin-top: 43px !important;
+        margin-bottom: 28px !important;
+        font-size: 25px;
+        font-family: 'Montserrat'!important;
+        font-weight: 900 !important;
+        line-height: 196.187% !important;
+    }
+    
     #content{
         flex-direction: column;
         margin-inline: 5%;
@@ -59,7 +61,9 @@ main{
     }
     .book-name{
         margin: 0;
-        font-weight: 900;
+        font-size: 25px !important;
+        font-family: 'Montserrat'!important;
+        font-weight: 900 !important;
         text-align: center;
     }
     .author{
@@ -74,6 +78,7 @@ main{
 }
 #content{
     display: flex;
+    justify-content: space-between;
 
 }
 #search{

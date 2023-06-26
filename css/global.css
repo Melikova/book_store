@@ -60,15 +60,15 @@ header{
     background: #FFF;
     margin:0px 55px 35px 55px;
 }
-.modal-body h1{
-    text-align: center !important;
-    font-family: 'Montserrat'!important;
-    font-style: normal!important;
-    font-weight: 700!important;
-    font-size: 44px!important;
-    line-height: 54px!important;
-    margin-top: 70px!important;
-    margin-bottom: 17px!important;
+.modal-title{
+    text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 44px !important;
+    line-height: 54px;
+    margin-top: 70px;
+    margin-bottom: 17px;
 }
 .modal-content{
     width: fit-content;
@@ -102,6 +102,7 @@ header{
     margin-bottom: 35px;
     text-align: center;
 }
+
 @media only screen and (max-width: 500px) {
     body {
       overflow-x: hidden!important;
@@ -112,6 +113,42 @@ header{
         display: flex;
         justify-content: space-between;
         margin-top: 16px;
+    }
+    .modal-title{
+        color: #000;
+        text-align: center;
+        height: 51px;
+        font-size: 25px !important;
+        font-family: 'Montserrat'!important;
+        font-weight: 700 !important;
+        margin-top: 43px !important;
+        margin-bottom: 30px !important;
+    }
+    #nameinput{
+        margin-bottom: 0px;
+    }
+    .modal-body input{
+        width: 218px;
+        height: 46px;
+        padding-left: 13px;
+        margin-left: 21px;
+        margin-right: 21px;
+
+    }
+    .modal-content{
+        margin: 163px auto 0px auto;
+    }
+    
+    #mailinput{
+        margin-top: 24px;
+        margin-bottom: 29px;
+    }
+    .joinBtn{
+        width: 218px;
+        height: 46px;
+        margin-top: 0px;
+        margin-left: 21px;
+        margin-right: 21px;
     }
     #navList, #join a{
         display: none;
@@ -127,7 +164,10 @@ header{
     }
     #row1{
         flex-direction: column;
-        text-align: center;
+        margin: 0px auto;
+    }
+    #call{
+       text-align: center;
     }
 }
 .overlay {
@@ -170,8 +210,8 @@ header{
   
   .overlay .closebtn {
     position: absolute;
-    top: 20px;
-    right: 45px;
+    top: 0px;
+    right: 0px;
     font-size: 60px;
   }
 #social-media p{
@@ -192,7 +232,6 @@ header{
 }
 .icon{
     margin-left: 54px;
-    /* align-items: center; */
     margin-bottom: 68px;
 }
 .icon:first-child{
