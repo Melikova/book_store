@@ -172,6 +172,12 @@
             set(ref(db, 'about'), {about_title: title, image_url: url, description: desc});
         }
 
+        function deleteDataFromTable(table, id){
+            const db = getDatabase();
+            return remove(ref(db, `/${table}/${id}`)).then(() => {
+              console.log("location removed");
+            }); 
+        } 
 
       </script>
 </body>
