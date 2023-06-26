@@ -4,14 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search Page</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/search.css" />
@@ -32,22 +26,10 @@
       </div>
       <div id="join">
         <img src="../assets/images/profile.svg" alt="" />
-        <a
-          href="#"
-          type="button"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-          >Join Us</a
-        >
+        <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Join Us</a>
       </div>
       <!-- Modal -->
-      <div
-        class="modal fade mt-5"
-        id="exampleModal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
+      <div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -60,21 +42,9 @@
               ></button>
             </div>
             <div class="modal-body">
-              <input type="text" placeholder="Full name" />
-              <input type="text" placeholder="Email" /><br />
-              <button
-                id="joinBtn"
-                style="
-                  background-color: #e16a00;
-                  text-align: center;
-                  width: 70%;
-                  height: 70px;
-                "
-                type="button"
-                class="btn"
-              >
-                Join
-              </button>
+              <input id="user_fullname type="text" placeholder="Full name" />
+              <input id="user_email" type="text" placeholder="Email" /><br />
+              <button id="joinBtn" style="background-color: #e16a00; text-align: center; width: 70%; height: 70px;" type="button" class="btn">Join</button>
             </div>
           </div>
         </div>
@@ -150,11 +120,7 @@
         <div id="media-icon">
           <img id="facebook" class="icon" src="../assets/icons/facebook.svg" />
           <img id="twitter" class="icon" src="../assets/icons/twitter.svg" />
-          <img
-            id="instagram"
-            class="icon"
-            src="../assets/icons/instagram.svg"
-          />
+          <img id="instagram" class="icon" src="../assets/icons/instagram.svg"/>
         </div>
       </div>
       <div id="brown-area">
@@ -194,9 +160,27 @@
         </div>
       </div>
     </footer>
+    <!-- Modal -->
+<!--     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Join Us</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input id="user_fullname" type="text" placeholder="Full name">
+                <input id="user_email" type="text" placeholder="Email"><br>
+                <button id="joinBtn" style="background-color: #E16A00; text-align: center;width: 70%; height: 70px;" type="button" class="btn">Join</button>
+            </div>
+          </div>
+        </div>
+    </div> -->
+    <!-- End of Modal -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="../js/db_config.js"></script>
     <script type="module">
       import Swiper from "https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.esm.browser.min.js";
       const swiper = new Swiper(".swiper", {
@@ -210,5 +194,20 @@
       });
       console.log(swiper);
     </script>
-  </body>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+        import { getDatabase, ref, set, push, onValue } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+        const app = initializeApp(firebaseConfig);
+
+        function writeUserData(name, email) {
+            const db = getDatabase();
+            push(ref(db, 'users'), {username: name, email: email});
+        }
+
+        $('#joinBtn').click(()=>{
+            writeUserData($('#user_fullname').val(), $('#user_email').val());
+        });
+
+      </script>
+</body>
 </html>

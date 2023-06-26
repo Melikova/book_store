@@ -1,0 +1,38 @@
+@import url(./font.css);
+#aboutEl{ 
+    color:#E16A00 !important;
+    text-decoration: underline !important;
+    font-weight: 700 !important;
+}
+
+main{
+    margin-bottom: 148px; 
+    position: relative; 
+    min-height: 400px;
+}
+
+#about_title_content{
+    color: #241400;
+    font-size: 36px;
+    font-family: Montserrat;
+    font-weight: 900;
+    line-height: 196.187%;
+    margin-bottom: 11px;
+}
+
+#about_content_desc{
+    color: #241400;
+    font-size: 18px;
+    font-family: Montserrat;
+    line-height: 196.187%; 
+    padding-right: 75px;
+}
+
+@media only screen and (max-width: 600px) {
+    #about_content_desc{
+        padding:0 25px;
+    }
+    #about_title_content{
+        margin-top: 59px;
+    }
+}

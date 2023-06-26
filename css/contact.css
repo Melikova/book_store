@@ -1,0 +1,43 @@
+@import url(./font.css);
+#contactEl{ 
+    color:#E16A00 !important;
+    text-decoration: underline !important;
+    font-weight: 700 !important;
+}
+
+main{
+    margin-bottom: 148px;
+}
+
+#contact_title{
+    font-size:36px;
+    font-weight:900;
+    color:#241400";
+}
+
+main input{
+    height: 75px;
+    padding-left: 38px !important;  
+}
+
+main textarea{
+    height: 153px;
+    padding-left: 38px !important;
+    padding-top: 13px !important;
+}
+
+main button{
+    height: 75px;
+    color: #FFF !important;
+    text-align: center;
+    font-size: 30px !important;
+    font-family: "Crimson Text" !important;
+    margin-top: 50px;
+    background: #E16A00 !important;
+}
+
+@media only screen and (max-width: 600px) {
+    #contact_send_button{
+        width: 100% !important;
+    }
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/global.css">
+</head>
+  <body>
+    <div class="header container p-0" style="margin-bottom: 140px;">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid" style="color:#241400 !important">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/images/logo.svg" alt="" width="177px">
+                </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-4 mb-lg-0 w-100 justify-content-center">
+                  <li class="nav-item">
+                    <a id="homeEl" class="nav-link active" style="font-size:12px !important" aria-current="page" href="./index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="catalogEl" class="nav-link" style="font-size:12px !important" href="./pages/catalog.html">Catalog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="aboutEl" class="nav-link" style="font-size:12px !important" href="./pages/about.html">About store</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="contactEl" class="nav-link" style="font-size:12px !important" href="./pages/contact.html">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="searchEl" class="nav-link" style="font-size:12px !important" href="./pages/search.html">Search</a>
+                  </li>
+                </ul>
+                <span class="navbar-text" style="text-wrap:nowrap;">
+                    <div id="join">
+                        <img src="./assets/images/profile.svg" width="16px !important" alt="">
+                        <a style="font-size:14px !important" href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Join Us</a>
+                    </div>
+                </span>
+              </div>
+            </div>
+        </nav>
+    </div>
+    <main>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-4">
+            <div class="mb-3" style="font-size:36px; font-weight:900; color:#241400">Books from A to Z</div>
+            <div class="mb-3" style="font-size:13px; color:#241400">In our store you can find a book for every taste. A large assortment. Nice prices. Interesting stories.</div>
+            <div style="width: 212px; height:50px; background:#E16A00; border:none; color:#fff"><a class="text-decoration-none text-white d-inline-block w-100 h-100 text-center" style="line-height:50px; font-size:15px; font-weight:700" href="./pages/catalog.html">Go to catalog</a></div>
+          </div>
+          <div class="col-8 d-flex align-items-center justify-content-center position-relative">
+            <img width="562px" src="./assets/images/home_header.png" alt="">
+            <img style="z-index:-999; right:0" class="position-absolute" width="632px" src="./assets/images/fon.png" alt="">
+          </div>
+        </div>
+        <div class="row justify-content-center" style="margin-top:148px;">
+          <div class="text-center mb-5" style="font-weight:900; font-size:25px; color:#241400">Catalog</div>
+          <div class="d-flex flex-wrap" style="width:798px">
+            <div class="shadow m-2 text-center" style="line-height: 76px; font-size:14px; font-weight:700; width:242px; height:76px; color:#241400">Books</div>
+            <div class="shadow m-2 text-center" style="line-height: 76px; font-size:14px; font-weight:700; width:242px; height:76px; color:#241400">Electronic books</div>
+            <div class="shadow m-2 text-center" style="line-height: 76px; font-size:14px; font-weight:700; width:242px; height:76px; color:#241400">Audiobooks</div>
+            <div class="shadow m-2 text-center" style="line-height: 76px; font-size:14px; font-weight:700; width:242px; height:76px; color:#241400">Toys, creativity</div>
+            <div class="shadow m-2 text-center" style="line-height: 76px; font-size:14px; font-weight:700; width:242px; height:76px; color:#241400">Book accessories</div>
+            <div class="shadow m-2 text-center" style="line-height: 76px; font-size:14px; font-weight:700; width:242px; height:76px; color:#241400">Notepads</div>
+            <div class="shadow m-2 text-center" style="line-height: 76px; font-size:14px; font-weight:700; width:242px; height:76px; color:#241400">Board games</div>
+            <div class="shadow m-2 text-center" style="line-height: 76px; font-size:14px; font-weight:700; width:242px; height:76px; color:#241400">Present</div>
+            <div class="shadow m-2 text-center" style="line-height: 76px; font-size:14px; font-weight:700; width:242px; height:76px; color:#241400">Stock</div>
+          </div>
+        </div>
+        <div class="row justify-content-center" style="margin-top:148px;">
+          <div class="text-center mb-5" style="font-weight:900; font-size:25px; color:#241400">About</div>
+          <div class="d-flex justify-content-between">
+            <div class="d-flex align-items-center"><span style="font-size:50px; font-weight:900; color:#241400; margin-right:25px">35</span><span style="font-size:13px; color:#241400;">Branches the country</span></div>
+            <div class="d-flex align-items-center"><span style="font-size:50px; font-weight:900; color:#241400; margin-right:25px">898</span><span style="font-size:13px; color:#241400;">Products catalog</span></div>
+            <div class="d-flex align-items-center"><span style="font-size:50px; font-weight:900; color:#241400; margin-right:25px">8659</span><span style="font-size:13px; color:#241400;">Buyers</span></div>
+            <div class="d-flex align-items-center"><span style="font-size:50px; font-weight:900; color:#241400; margin-right:25px">72</span><span style="font-size:13px; color:#241400;">Hours delivery to cities</span></div>
+          </div>
+        </div>
+        <div class="row justify-content-center" style="margin-top:148px; margin-bottom:148px">
+          <div class="text-center mb-5" style="font-weight:900; font-size:25px; color:#241400">Delivery</div>
+          <div class="text-center" style="font-size:12px">We work without holidays and weekends! Residents of Kiev can receive an order on the day of its registration. Customers from other cities of Ukraine can receive an order within 1-5 days, depending on the location of the settlement and the selected delivery method. Orders over UAH 1000 are delivered free of charge *. You can see the available methods, exact terms and cost of delivery during checkout in the order basket, aafter selecting the delivery city.</div>
+          <div class="text-center mt-2" style="font-size:12px"><a href="#" class="text-decoration-none text-dark">More details</a></div>
+        </div>
+      </div>
+    </main>
+    <footer class="container-fluid pt-5 pb-3" style="background: #391f02; color:#fff;">
+        <div class="container">
+            <div class="row" style="text-wrap: nowrap;">
+                <div class="col-3 d-flex align-items-center justify-content-start"><img src="./assets/icons/footer-logo.svg" width="177px"></div>
+                <div class="col-2">
+                    <ul class="list" style="list-style:none">
+                        <li>Popular</li>
+                        <li style="font-size:13px">Programming</li>
+                        <li style="font-size:13px">Books for children</li>
+                        <li style="font-size:13px">Psychology</li>
+                        <li style="font-size:13px">Business</li>  
+                    </ul>
+                </div>
+                <div class="col-2">
+                    <ul class="list" style="list-style:none">
+                        <li>Information</li>
+                        <li style="font-size:13px">Delivery</li>
+                        <li style="font-size:13px">Payment</li>
+                        <li style="font-size:13px">About the store <br><br></li>
+                    </ul>
+                </div>
+                <div class="col-2">
+                    <ul class="list" style="list-style:none">
+                        <li>Help</li>
+                        <li style="font-size:13px">Contacts</li>
+                        <li style="font-size:13px">Purchase returns</li>
+                        <li style="font-size:13px">Buyer help<br><br></li>
+                    </ul>
+                </div>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                        <p style="font-size:12px">+38 (071) 339-16-26</p>
+                        <button class="btn btn-outline-transparent" style="font-size: 14px; border-color:#E16A00 !important; color:#E16A00">Request a call</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col">
+                    <p class="text-center" style="font-size:12px">All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Join Us</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" placeholder="Full name">
+                <input type="text" placeholder="Email"><br>
+                <button id="joinBtn" style="background-color: #E16A00; text-align: center;width: 70%; height: 70px;" type="button" class="btn">Join</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- End of Modal -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
