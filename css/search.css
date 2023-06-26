@@ -78,7 +78,7 @@ main{
     height: 100%;
     margin-right: auto;
 }
-.book-name{
+#book-name{
     margin-top: 47px;
     font-family: 'Montserrat';
     font-style: normal;

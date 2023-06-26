@@ -6,7 +6,6 @@
     color:#E16A00 !important;
     text-decoration: underline !important;
     font-weight: 700 !important;
-
 }
 #sec1Header{
     display: flex;
@@ -115,4 +114,22 @@
     color: #241400;
     margin-top: 171px;
     margin-bottom: 40px;
+}
+
+.slick-list{
+    padding-bottom: 20px !important;
+}
+
+main{
+    margin-bottom: 148px;
+}
+
+#star-rating img{
+    width: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+    .slick-slide{
+        width:230px !important;
+    }
 }
