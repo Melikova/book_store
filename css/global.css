@@ -106,13 +106,21 @@ header{
 @media only screen and (max-width: 500px) {
     body {
       overflow-x: hidden!important;
+      margin-right: 0px;
+
     }
     header{
-        margin-left: 15px;
-        margin-right: 18px;
+        margin: 16px 0px 0px 0px;
         display: flex;
+        
         justify-content: space-between;
-        margin-top: 16px;
+    }
+    #logo{
+        margin-left: 15px;
+        
+    }
+    #join{
+        margin-right: 13px;
     }
     .modal-title{
         color: #000;
