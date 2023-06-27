@@ -1,0 +1,64 @@
+
+
+@media (max-width: 768px) {
+ 
+    #textAtoZ {
+        text-align: center;
+        height: 50px;
+        font-size: 15px;
+        font-weight: 900;
+    }
+
+    #textAboutBook {
+        text-align: center;
+    }
+
+    #btnGoCatalog {
+        width: 100% !important; 
+        height: 50px;
+        background-color: aqua;
+    }
+
+    #bookImage img {
+        width: 90%;
+        margin-right: 20px;
+    }
+
+    #aboutNumber span:first-child{
+        font-size: 60px !important;
+        font-weight: 900;
+        width: 20%;
+        flex: 1;
+}
+
+    #aboutNumber span:nth-child(2){
+        flex: 2;
+        font-size: 20px !important;
+    }
+
+
+    #aboutNumber {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #desktop {
+        display: none;
+    }
+
+    #mobile {
+        display: block !important;
+    }
+
+  }
+
+
+
+  @media (max-width: 1000px){
+     #catalogCard {
+        width: 80% !important;
+    }
+  }
+    
+  
