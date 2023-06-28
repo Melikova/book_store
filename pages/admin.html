@@ -64,25 +64,25 @@
                 <form class="bg-white shadow px-3 py-4 rounded">
                     <div class="mb-3">
                       <label for="book_title" class="form-label">Book Name</label>
-                      <input type="text" class="form-control shadow" id="book_title">
+                      <input id="bookName" type="text" class="form-control shadow" id="book_title">
                     </div>
                     <div class="mb-3">
                       <label for="book_author_name" class="form-label">Author Name</label>
-                      <input type="text" class="form-control shadow" id="book_author_name">
+                      <input id="authorName" type="text" class="form-control shadow" id="book_author_name">
                     </div>
                     <div class="mb-3">
                         <label for="book_image_url" class="form-label">Book image URL</label>
-                        <input type="text" class="form-control shadow" id="book_image_url">
+                        <input id="bookImg" type="text" class="form-control shadow" id="book_image_url">
                     </div>
                     <div class="mb-3">
                         <label for="book_desc" class="form-label">Description</label>
-                        <input type="text" class="form-control shadow" id="book_desc">
+                        <input id="description"  type="text" class="form-control shadow" id="book_desc">
                     </div>
                     <div class="mb-3">
                         <label for="book_type" class="form-label">Book Type</label>
-                        <input type="text" class="form-control shadow" id="book_type">
+                        <input id="bookType" type="text" class="form-control shadow" id="book_type">
                     </div>
-                    <button type="button" class="btn w-100" id="book_submit_button" style="background-color: #FF8B00;">Add</button>
+                    <button type="button" class="btn w-100" id="addBookButton" style="background-color: #FF8B00;">Add</button>
                   </form>
             </div>
             <div class="row" id="about">
@@ -116,11 +116,119 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="../js/db_config.js"></script>
-    <script src="../js/admin.js"></script>
     <script type="module">
+
+
+
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
         import { getDatabase, ref, set, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
         const app = initializeApp(firebaseConfig);
+
+        
+const apiKey = "AIzaSyAkvx-sx9SeDZe-FkrmgSgY35x6zuMSEQw";
+const searchInput = document.querySelector("#search");
+const searchBookResult = document.querySelector("#searchBookResult");
+const bookName = document.querySelector("#bookName");
+const authorName = document.querySelector("#authorName");
+const bookImg = document.querySelector("#bookImg");
+const description = document.querySelector("#description");
+const bookType = document.querySelector("#bookType");
+const addBookButton = document.querySelector("#addBookButton") 
+
+let timer;
+
+// Debounce function
+async function getApi(query) {
+  clearTimeout(timer);
+
+  timer = setTimeout(async () => {
+    try {
+      const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=5&key=${apiKey}`;
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+      console.log("data: ", data.items);
+      printResult(data);
+    } catch (err) {
+      console.log("err: ", err);
+    }
+  }, 300);
+    
+}
+
+// Checks the entered character
+function changeEvent(event) {
+  const query = event.target.value.trim().toLowerCase();
+  const lastChar = query.charAt(query.length - 1);
+
+    if (lastChar.match(/[a-z]/i)) {
+    getApi(query);
+  } else {
+    clearResult();
+  }
+}
+
+function searcInput(event) {
+  if (event.keyCode === 13) {
+    let text = searchInput.value;
+    console.log(text);
+    getApi(text);
+  }
+}
+
+function clearResult() {
+  searchBookResult.innerHTML = "";
+  
+}
+
+
+
+function printResult(data) {
+  clearResult();
+
+  data.items.forEach((bookItem) => {
+    const smallThumbnailLink = bookItem.volumeInfo.imageLinks.smallThumbnail;
+    const bookTitle = bookItem.volumeInfo.title;
+    const bookAuthorName = bookItem.volumeInfo.authors;
+    const bookDescription = bookItem.volumeInfo.description;
+    const searchBookType = bookItem.volumeInfo.categories;
+
+
+    const bookElement = document.createElement("div");
+    bookElement.classList.add("w-25", "d-flex", "h6", "align-items-center");
+    bookElement.style.cursor = "pointer";
+    bookElement.innerHTML = `
+      <img class="w-100 p-2" src="${smallThumbnailLink}" alt="">
+      <p>${bookTitle}</p>`;
+
+    bookElement.addEventListener("click", () => {
+      
+      bookName.value = bookTitle
+      authorName.value = bookAuthorName
+      bookImg.value = smallThumbnailLink
+      description.value = bookDescription
+      bookType.value = searchBookType
+      searchInput.value = ""
+      clearResult()
+
+    })
+
+    searchBookResult.appendChild(bookElement);
+  });
+}
+
+
+// when user click out input
+// document.addEventListener("mousedown", (event) => {
+//   const clickInput = searchInput.contains(event.target);
+//   if (!clickInput) {
+//     searchInput.value = "";
+//     clearResult();
+//   }
+// });
+
+searchInput.addEventListener("input", changeEvent);
+searchInput.addEventListener("keyup", searcInput);
+
 
         getUsersData();
         getContactsData();
@@ -225,6 +333,26 @@
             }); 
         }
 
+        function getAddBookAdmin(){
+            const db = getDatabase();
+            set(ref(db, "addApiBooks/" + bookName.value), {
+                name: bookName.value,
+                authorName : authorName.value,
+                imageUrl: bookImg.value,
+                description : description.value,
+                bookType: bookType.value
+            }).then(()=>{
+                alert('Successfully Added');
+            }).catch(()=>{
+                alert('Error Adding Book')
+            })
+
+        }
+        
+        
+        addBookButton.addEventListener("click", getAddBookAdmin)
+      
+      
       </script>
 </body>
 </html>
