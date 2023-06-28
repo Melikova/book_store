@@ -24,10 +24,12 @@ main{
     main{
         margin-left: 0px !important;
         margin-top: 0px !important;
+        width: fit-content;
         
     }
     #title{
         text-align: center;
+        width: 100%;
         margin-top: 43px !important;
         margin-bottom: 28px !important;
         font-size: 25px;
@@ -38,22 +40,33 @@ main{
     
     #content{
         flex-direction: column;
-        margin-inline: 5%;
+        /* margin-inline: 5%; */
     }
     #responsiveCard{
-        display: block;
-    }
-    #responsiveCard img{
-        margin-top: 79px;
-        margin-inline: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
     .swiper{
         display: none;
     }
+    #search{
+        width: 100%;
+    }
     #search input{
-        width:100%;
+        width:243px;
+        margin: 0px auto;
+        height: 39px;
         margin-bottom: 24px;
         
+    }
+    #searchBtn{
+        text-align: center;
+        height: 39px;
+        width:243px;
+        margin: 0px auto;
+        margin-bottom: 79px;
     }
     .book-info{
         margin: 0;
@@ -83,7 +96,7 @@ main{
 }
 #search{
     display: flex;
-    width: 433px;
+    /* width: 433px; */
     flex-direction: column;
 }
 #search input{
