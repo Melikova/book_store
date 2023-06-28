@@ -172,3 +172,17 @@ table tbody{
     background: #FF8B00;
     color: #fff;
 }
+
+#searchBookResult::-webkit-scrollbar {
+    width: 10px;
+}
+
+#searchBookResult::-webkit-scrollbar-thumb {
+    background-color: #FF8B00;
+    border-radius: 10px;
+}
+
+#searchBookResult::-webkit-scrollbar-track {
+    background-color: #FFF;
+    border-radius: 10px;
+}
