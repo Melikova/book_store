@@ -9,44 +9,36 @@
     <link rel="stylesheet" href="../css/contact.css">
 </head>
 <body>
-    <div class="header container p-0" style="margin-bottom: 100px;">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid" style="color:#241400 !important">
-                <a class="navbar-brand" href="#">
-                    <img src="../assets/images/logo.svg" alt="" width="177px">
-                </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-4 mb-lg-0 w-100 justify-content-center">
-                  <li class="nav-item">
-                    <a id="homeEl" class="nav-link active" style="font-size:12px !important" aria-current="page" href="../index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a id="catalogEl" class="nav-link" style="font-size:12px !important" href="../pages/catalog.html">Catalog</a>
-                  </li>
-                  <li class="nav-item">
-                    <a id="aboutEl" class="nav-link" style="font-size:12px !important" href="../pages/about.html">About store</a>
-                  </li>
-                  <li class="nav-item">
-                    <a id="contactEl" class="nav-link" style="font-size:12px !important" href="../pages/contact.html">Contact Us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a id="searchEl" class="nav-link" style="font-size:12px !important" href="../pages/search.html">Search</a>
-                  </li>
-                </ul>
-                <span class="navbar-text" style="white-space:nowrap;">
-                    <div id="join">
-                        <img src="../assets/images/profile.svg" width="16px !important" alt="">
-                        <a style="font-size:14px !important" href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Join Us</a>
-                    </div>
-                </span>
-              </div>
-            </div>
-        </nav>
-    </div>
-    <main>
+  <div class="container">
+    <header>
+      <div id="logo">
+        <img src="../assets/images/logo.svg" alt="" />
+      </div>
+      <div id="navList">
+        <a id="homeEl" href="../index.html">Home</a>
+        <a id="catalogEl" href="./catalog.html">Catalog</a>
+        <a id="aboutEl" href="./about.html">About store</a>
+        <a id="contactEl" href="./contact.html">Contact Us</a>
+        <a id="searchEl" href="./search.html">Search</a>
+      </div>
+      <div id="join" style="cursor: pointer;">
+        <img src="../assets/images/profile.svg" data-bs-toggle="modal" data-bs-target="#exampleModal"/>
+        <a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Join Us</a>
+        <div id="hamBar"><img src="../assets/icons/hamburgerbar.svg" onclick="openNav()"></div>
+      </div>
+      <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+          <a id="homeEl" href="../index.html">Home</a>
+          <a id="catalogEl" href="./catalog.html">Catalog</a>
+          <a id="aboutEl" href="./about.html">About store</a>
+          <a id="contactEl" href="./contact.html">Contact Us</a>
+          <a id="searchEl" href="./search.html">Search</a>
+        </div>
+      </div>
+    </header>
+  </div>
+  <main style="margin-top: 80px">
       <div class="container">
         <div class="row">
           <div class="col mb-4 text-center text-md-start" id="contact_title">Contact Us</div>
@@ -89,20 +81,42 @@
         </div>
       </div>
     </main>
-    <div class="container-fluid">
+    <div id="social" class="container-fluid">
       <div class="row">
           <div class="col">
-              <p class="h2 text-center mb-5" style="color:#391f02 !important">Follow us on social media</p>
+              <p class="text-center mb-5">Follow us on social media</p>
               <div id="media-icon">
-                  <a class="mx-4" href="#"><img id="facebook" class="icon" src="../assets/icons/facebook.svg"></a>
-                  <a class="mx-4" href="#"><img id="twitter" class="icon" src="../assets/icons/twitter.svg"></a>
-                  <a class="mx-4" href="#"><img id="instagram" class="icon" src="../assets/icons/instagram.svg"></a>
+                  <a class="mx-2 mx-sm-4" href="#"><img id="facebook" class="icon" src="../assets/icons/facebook.svg"></a>
+                  <a class="mx-2 mx-sm-4" href="#"><img id="twitter" class="icon" src="../assets/icons/twitter.svg"></a>
+                  <a class="mx-2 mx-sm-4" href="#"><img id="instagram" class="icon" src="../assets/icons/instagram.svg"></a>
               </div>
           </div>
       </div>
     </div>
-    <footer class="container-fluid pt-5 pb-3" style="background: #391f02; color:#fff;">
-      <div class="container">
+    <footer class="container-fluid pt-3 pt-sm-5 pb-3" style="background: #391f02; color:#fff;">
+      <div class="container d-block d-sm-none">
+        <div class="row">
+            <div class="col d-flex align-items-center justify-content-center"><img src="../assets/icons/footer-logo.svg" width="177px"></div>
+        </div>
+        <div class="row mb-5 mt-2">
+          <div class="col text-center">
+            <a class="text-decoration-none" href="#">Home</a>
+            <a class="text-decoration-none" href="#">Catalog</a>
+            <a class="text-decoration-none" href="#">About</a>
+            <a class="text-decoration-none" href="#">Contact Us</a>
+            <a class="text-decoration-none" href="#">Search</a>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col d-flex justify-content-center">
+            <div class="border-top w-75"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center text-white copyright">Library BookStore EACamp<br>© 2003-2021 </div>
+        </div>
+      </div>
+      <div class="container d-none d-sm-block">
           <div class="row" style="white-space:nowrap;">
               <div class="col-3 d-flex align-items-center justify-content-start"><img src="../assets/icons/footer-logo.svg" width="177px"></div>
               <div class="col-2">
@@ -145,25 +159,22 @@
       </div>
   </footer>
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Join Us</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <input type="text" placeholder="Full name">
-              <input type="text" placeholder="Email"><br>
-              <button id="joinBtn" style="background-color: #E16A00; text-align: center;width: 70%; height: 70px;" type="button" class="btn">Join</button>
-          </div>
+  <div class=" modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content ">
+        <div class="modal-body">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Join Us</h1>
+          <input id="user_fullname" type="text" placeholder="Full name">
+          <input id="user_email" type="text" placeholder="Email"><br>
+          <button id="joinBtn" type="button" class="joinBtn">Join</button>
         </div>
       </div>
+    </div>
   </div>
-  <!-- End of Modal -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <script src="../js/responsive.js"></script>
   <script src="../js/db_config.js"></script>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
@@ -182,6 +193,15 @@
             $('#contact_address').val('');
             $('#contact_phone').val('');
             $('#contact_note').val('');
+        });
+
+        function writeUserData(name, email) {
+            const db = getDatabase();
+            push(ref(db, 'users'), {username: name, email: email});
+        }
+
+        $('#joinBtn').click(()=>{
+            writeUserData($('#user_fullname').val(), $('#user_email').val());
         });
 
       </script>

@@ -36,8 +36,39 @@ main button{
     background: #E16A00 !important;
 }
 
+#social p{
+    font-family: Montserrat;
+    font-size: 25px;
+    font-weight: 900;
+    color:#391f02;
+}
+
+#social img{
+    height: 80px;
+}
+
 @media only screen and (max-width: 600px) {
     #contact_send_button{
         width: 100% !important;
     }
+
+    #social p{
+        font-size: 18px;
+    }
+    #social img{
+        height: 38px;
+    }
+}
+
+footer .d-sm-none a{
+    font-weight: 400;
+    font-size: 12px;
+    font-family: Montserrat;
+    color: #F2F2F2;
+}
+
+footer .copyright{
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 12px;
 }

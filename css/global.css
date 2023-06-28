@@ -4,12 +4,12 @@ body{
     
 }
 header{
-    margin-left: 215px;
+    /* margin-left: 215px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 31px;
-    margin-right: 92px;
+    /* margin-right: 92px; */
 }
 #join{
     display: flex;
