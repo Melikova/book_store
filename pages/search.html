@@ -50,10 +50,12 @@
           </div>
           <div class="row">
             <div class="col-sm-4 col-12">
-              <div class="input-group">
-                <input id="searchBar" type="text" class="form-control" placeholder="Kitab adı" aria-label="Username" aria-describedby="basic-addon1">
+              <form action="" name="search_input">
+              <div class="input-group d-flex flex-column">
+                <input name="searchBar" id="searchBar" type="text" class="w-100 form-control" placeholder="Kitab adı" aria-label="Username" aria-describedby="basic-addon1">
               </div>
               <button class="btn w-100" id="searchBtn">Search</button>
+            </form>
             </div>
             <div class="col-sm-8 col-12 px-5">
               <div class="slider demo searched_books_slider">
@@ -231,6 +233,12 @@
           }
         });
 
+        $('#searchBtn').click(()=>{
+          if($("form[name='search_input']").valid()==true){
+            console.log($("#searchBar").val());
+          }
+        })
+
         $("form[name='join_modal']").validate({
           rules: {
             user_name: "required",
@@ -242,6 +250,15 @@
           messages: {
             user_name: "Please enter your name",
             user_email: "Please enter a valid email address"
+          }
+        });
+
+        $("form[name='search_input']").validate({
+          rules: {
+            searchBar: "required"
+          },
+          messages: {
+            searchBar: "Please enter book name"
           }
         });
       </script>
