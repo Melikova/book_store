@@ -102,7 +102,23 @@ header{
     margin-bottom: 35px;
     text-align: center;
 }
-
+.modal {
+    z-index: 10;
+}
+.modal-backdrop {
+    z-index: 2;
+}
+.notifications-box-one span {
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+#notifications-main{
+    top:10px;
+    align-items: center;
+    width: auto;
+    right: 10px;
+}
 @media only screen and (max-width: 500px) {
     body {
       overflow-x: hidden!important;
@@ -113,6 +129,15 @@ header{
         display: flex;
         justify-content: space-between;
         margin-top: 16px;
+    }
+    .notifications-box-msg span {
+        white-space: nowrap !important;
+        margin-right: 15px !important;
+    }
+    #notifications-main{
+        top:5px !important;
+        scale: 0.8 !important;
+        right: 5px !important;
     }
     .modal-title{
         color: #000;
