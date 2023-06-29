@@ -25,10 +25,11 @@ main{
     font-weight: 400;
     font-size: 23px;
     border: 1px solid #CECECE;
-    margin-bottom: 44px;
+    /* margin-bottom: 44px; */
     border-radius: 5px;
 }
 #searchBtn{
+    margin-top:44px;
     height: 65px;
     color: #FFFFFF;
     font-family: 'Crimson Text';
