@@ -49,61 +49,62 @@ header{
     font-weight: 400;
     font-size: 12px;
 }
-.modal-body input {
-    width: 560px;
-    height: 76px;
-    color: #797667;
-    font-size: 19px;
-    font-family: 'Crimson Text';
-    padding-left:52px;
-    border: 1px solid #CECECE;
-    background: #FFF;
-    margin:0px 55px 35px 55px;
-}
-.modal-title{
-    text-align: center;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700 !important;
-    font-size: 44px !important;
-    line-height: 54px;
-    margin-top: 70px;
-    margin-bottom: 17px;
-}
-.modal-content{
-    width: fit-content;
-    
-    margin-top: 40px;
-    
-}
-.modal-body{
-    display: flex;
-    margin-inline: auto !important;
-    flex-direction: column;
-    padding: 0 !important;
-    width: fit-content !important;
-    text-align: center;
-}
+
 .joinBtn{
     font-family: 'Crimson Text';
     font-style: normal;
     font-weight: 700;
     font-size: 19px;
-    line-height: 25px;
-    width: 100%;
     color: #FFFFFF;
-    border-radius: 5px;
-    border: 1px solid #CECECE;
     background-color: #E16A00;
-    width: 560px;
     height: 76px;
-    margin-inline:auto;
-    margin-top: 51px;
-    margin-bottom: 35px;
-    text-align: center;
 }
 
+.joinBtn:hover{
+    background-color: #E16A00;
+    color: #fff;
+}
+
+#join_modal .modal-content{
+    padding: 70px 55px 35px 55px !important;
+}
+
+.modal {
+    --bs-modal-width: 675px !important;
+}
+
+#join_modal .modal-title{
+    color: #000;
+    text-align: center;
+    font-size: 44px !important;
+    font-family: Montserrat !important;
+    font-style: normal;
+    font-weight: 700 !important;
+    line-height: normal;
+}
+
+#join_modal input{
+    height: 76px;
+    padding-left:25px;
+}
+
+form .error{
+    color: red;
+    font-size: 16px;
+    margin-top:10px;
+}
+
+
 @media only screen and (max-width: 500px) {
+    #join_modal .modal-content{
+        padding: 43px 21px 50px 21px !important;
+    }
+    #join_modal .modal-title{
+        font-size: 25px !important;
+    }
+    #join_modal input{
+        height: 46px;
+    }
     body {
       overflow-x: hidden!important;
       margin-right: 0px;
@@ -122,29 +123,9 @@ header{
     #join{
         margin-right: 13px;
     }
-    .modal-title{
-        color: #000;
-        text-align: center;
-        height: 51px;
-        font-size: 25px !important;
-        font-family: 'Montserrat'!important;
-        font-weight: 700 !important;
-        margin-top: 43px !important;
-        margin-bottom: 30px !important;
-    }
+
     #nameinput{
         margin-bottom: 0px;
-    }
-    .modal-body input{
-        width: 218px;
-        height: 46px;
-        padding-left: 13px;
-        margin-left: 21px;
-        margin-right: 21px;
-
-    }
-    .modal-content{
-        margin: 163px auto 0px auto;
     }
     
     #mailinput{
@@ -152,11 +133,8 @@ header{
         margin-bottom: 29px;
     }
     .joinBtn{
-        width: 218px;
-        height: 46px;
-        margin-top: 0px;
-        margin-left: 21px;
-        margin-right: 21px;
+        height: 42px;
+        font-size: 18px;
     }
     #navList, #join a{
         display: none;

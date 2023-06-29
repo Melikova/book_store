@@ -73,12 +73,6 @@ footer .copyright{
     font-size: 12px;
 }
 
-form .error{
-    color: red;
-    font-size: 16px;
-    margin-top:10px;
-}
-
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
