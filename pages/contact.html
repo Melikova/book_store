@@ -22,8 +22,8 @@
         <a id="searchEl" href="./search.html">Search</a>
       </div>
       <div id="join" style="cursor: pointer;">
-        <img src="../assets/images/profile.svg" data-bs-toggle="modal" data-bs-target="#exampleModal"/>
-        <a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Join Us</a>
+        <img src="../assets/images/profile.svg" data-bs-toggle="modal" data-bs-target="#join_modal"/>
+        <a href="#"  data-bs-toggle="modal" data-bs-target="#join_modal">Join Us</a>
         <div id="hamBar"><img src="../assets/icons/hamburgerbar.svg" onclick="openNav()"></div>
       </div>
       <div id="myNav" class="overlay">
@@ -161,18 +161,24 @@
       </div>
   </footer>
   <!-- Modal -->
-  <div class=" modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog ">
-      <div class="modal-content ">
-        <div class="modal-body">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Join Us</h1>
-          <input id="user_fullname" type="text" placeholder="Full name">
-          <input id="user_email" type="text" placeholder="Email"><br>
-          <button id="joinBtn" type="button" class="joinBtn">Join</button>
+  <form action="" name="join_modal">
+    <div class="modal fade" id="join_modal" tabindex="-1" aria-labelledby="joinModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h1 class="modal-title fs-5" id="joinModalLabel">Join Us</h1>
+            <div class="input-group mb-3 d-flex flex-column mt-5">
+              <input name="user_name" id="user_fullname" type="text" class="form-control w-100" placeholder="Full Name" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3 d-flex flex-column my-4">
+              <input name="user_email" id="user_email" type="text" class="form-control w-100" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
+            </div>
+            <button id="joinBtn" type="button" class="btn w-100 joinBtn mt-3 mt-sm-5">Join</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </form>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
@@ -206,7 +212,12 @@
     }
 
     $('#joinBtn').click(()=>{
+      if($("form[name='join_modal']").valid()==true){
         writeUserData($('#user_fullname').val(), $('#user_email').val());
+        $("#user_fullname").val(' ');
+        $('#user_email').val(' ');
+        $("#join_modal").modal('hide');
+      }
     });
 
   $("form[name='registration']").validate({
@@ -232,13 +243,23 @@
         number: "Phone number must should be numeric"
       },
       contact_email: "Please enter a valid email address"
-    },
-    // submitHandler: function(form) {
-    //   form.submit();
-    // }
+    }
   });
 
-// console.log($("form[name='registration']").valid());
+  $("form[name='join_modal']").validate({
+    rules: {
+      user_name: "required",
+      user_email: {
+        required: true,
+        email: true
+      }
+    },
+    messages: {
+      user_name: "Please enter your name",
+      user_email: "Please enter a valid email address"
+    }
+  });
+
 
     </script>
 </body>
