@@ -33,4 +33,6 @@ $(document).ready(function(){
     starOff: '../assets/images/star_off.png',
     starOn: '../assets/images/star_on.png'
   });
+
+  
 });

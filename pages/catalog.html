@@ -471,6 +471,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="../js/jquery_slick_slide/slick/slick.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-raty-js@2.8.0/lib/jquery.raty.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="../js/db_config.js"></script>
     <script src="../js/responsive.js"></script>
     <script src="../js/catalog.js"></script>
@@ -510,13 +511,13 @@
         }
       });
 
-        function writeCommentData(date, time, sender, text) {
+        function writeCommentData(date, time, sender, text, stars) {
             const db = getDatabase();
-            push(ref(db, 'comments'), {date: date, time: time, sender: sender, text: text});
+            push(ref(db, 'comments'), {date: date, time: time, sender: sender, text: text, stars:stars});
         }
 
         $('#comment_send_button').click(()=>{
-            writeCommentData('today', '20:36', 'anonim', $('#comment_text').val());
+            writeCommentData(moment().format('l'), moment().format('LT'), 'anonim', $('#comment_text').val(), $("input[name=score]").val());
             $('#comment_text').val('');
             getCommentsData();
         });
@@ -535,8 +536,21 @@
             let card='';
             if(data){                                
                 Object.entries(data).forEach((element, key) => {
+                    let stars='';
+                    if(element[1].stars){
+                        for(let i=0; i<5; i++){
+                            if(i<element[1].stars){
+                                stars+=`<img width="25px" src="../assets/images/star_on.png">`;
+                            }else{
+                                stars+=`<img width="25px" src="../assets/images/star_off.png">`;
+                            }                            
+                        }
+                    }
                     card+=`<div class="bg-white p-3 border rounded my-4">
-                            <div class="mb-3"><span class="me-2 fw-bolder">${element[1].sender}</span><span>${element[1].time} ${element[1].date}</span></div>
+                            <div class="mb-1"><span class="me-2 fw-bolder">${element[1].sender}</span><span>${element[1].time} ${element[1].date}</span></div>
+                            <div class="mb-3">
+                                <div>${stars}</div>
+                            </div>
                             <div>${element[1].text}</div>
                         </div> `;
                     console.log(element[1]);
