@@ -131,7 +131,7 @@
                         <select id="select" style="height: 40px;" class="rounded">
                           <option selected>Fantastic</option>
                         </select>
-                        <input id="bookType" type="text" class="form-control shadow" id="book_type">
+                        <input id="bookType" type="text" class="form-control shadow mt-4" id="book_type">
                     </div>
                     <button type="button" class="btn w-100" id="addBookButton" style="background-color: #FF8B00;">Add</button>
                   </form>
@@ -211,7 +211,6 @@ const bookImg = document.querySelector("#bookImg");
 const description = document.querySelector("#description");
 const bookType = document.querySelector("#bookType");
 const addBookButton = document.querySelector("#addBookButton") 
-const categoryInput = document.querySelector("#categoryInput")
 const select = document.querySelector("#select")
 const addDiv = document.querySelector("#addDiv")
 const openAddDiv = document.querySelector("#openAddDiv")
@@ -435,7 +434,7 @@ searchInput.addEventListener("keyup", searcInput);
               return
             }
 
-            set(ref(db, "addApiBooks/" + bookName.value), {
+            push(ref(db, "addApiBooks"), {
                 name: bookName.value,
                 authorName : authorName.value,
                 imageUrl: bookImg.value,
@@ -451,7 +450,7 @@ searchInput.addEventListener("keyup", searcInput);
 
         function addBookFairbase(){
             const db = getDatabase();
-            // select.innerHTML += `<option>${categoryInput.value}</option>`
+            select.innerHTML += `<option>${bookType.value}</option>`
             push(ref(db, "categories/"), {
               bookCategories: bookType.value,
             })
@@ -474,7 +473,7 @@ searchInput.addEventListener("keyup", searcInput);
 
                 select.innerHTML += `<option>${el[1].bookCategories}</option>`
               })
-              console.log(dataArray);
+              console.log("option", dataArray);
             }
           })
         }
