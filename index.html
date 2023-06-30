@@ -186,7 +186,7 @@
             const data = snapshot.val() || false;
             console.log(Object.values(data));
             console.log(Object.values(data).map((val)=>{
-              $("#cat_names").append(`<div id="catalogCard" class="shadow m-2 text-center col-md-4" style="line-height: 76px; font-size:14px; font-weight:700; width:242px; height:76px; color:#241400">${val.cat_name}</div>`);
+              $("#cat_names").append(`<div id="catalogCard" class="shadow m-2 text-center col-md-4" style="line-height: 76px; font-size:14px; font-weight:700; width:242px; height:76px; color:#241400">${val.bookCategories}</div>`);
             }));
           }, {
             onlyOnce: true

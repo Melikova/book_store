@@ -52,14 +52,14 @@
             <div class="col-sm-4 col-12">
               <form action="" name="search_input">
               <div class="input-group d-flex flex-column">
-                <input name="searchBar" id="searchBar" type="text" class="w-100 form-control" placeholder="Kitab adı" aria-label="Username" aria-describedby="basic-addon1">
+                <input name="searchBar" id="searchBar" type="text" class="w-100 form-control" placeholder="Kitab adı">
               </div>
-              <button class="btn w-100" id="searchBtn">Search</button>
+              <button type="button" class="btn w-100" id="searchBtn">Search</button>
             </form>
             </div>
             <div class="col-sm-8 col-12 px-5">
               <div class="slider demo searched_books_slider">
-                <div class="card mb-3">
+                <!-- <div class="card mb-3">
                   <div class="row g-0">
                     <div class="col-md-4 pt-4 mb-5 mb-sm-0">
                       <img src="../assets/images/book_1.svg" class="w-100 img-fluid rounded-start" alt="...">
@@ -81,8 +81,8 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="card mb-3">
+                </div> -->
+                <!-- <div class="card mb-3">
                   <div class="row g-0">
                     <div class="col-md-4 pt-4 mb-5 mb-sm-0">
                       <img src="../assets/images/book_2.png" class="img-fluid rounded-start" alt="...">
@@ -104,7 +104,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -235,9 +235,35 @@
 
         $('#searchBtn').click(()=>{
           if($("form[name='search_input']").valid()==true){
-            console.log($("#searchBar").val());
+            getSearhedData();
           }
         })
+
+        function getSearhedData() {
+            const db = getDatabase();
+            return onValue(ref(db, '/addApiBooks/'+$("#searchBar").val()), (snapshot) => {
+              const data = snapshot.val() || false;
+              $('.searched_books_slider').append(`<div class="card mb-3">
+                  <div class="row g-0">
+                    <div class="col-md-4 pt-4 mb-5 mb-sm-0">
+                      <img src="${data.imageUrl}" class="w-100 img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body p-0 ps-4 text-center text-sm-start">
+                        <p class="book-name">${data.name}</p>
+                        <p class="author">${data.authorName}</p>
+                        <p class="book-content">
+                          ${data.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>`);
+
+            }, {
+              onlyOnce: true
+            });
+        }
 
         $("form[name='join_modal']").validate({
           rules: {
