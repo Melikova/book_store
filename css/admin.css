@@ -6,7 +6,10 @@
     background: #fffaf5;
     min-height: 100vh;
 }
-
+#admin_login{
+    background-color: #720418; 
+    width:100vw; height:100vh;
+}
 nav{
     position: absolute;
     background: #720418;
