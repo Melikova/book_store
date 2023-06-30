@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $('.demo').slick({
+      adaptiveHeight: false,
       dots: false,
       slidesToShow: 5,
       arrows:true,
